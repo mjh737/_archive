@@ -1,0 +1,2 @@
+C:\Users\Matt\Desktop\Shuttle\Projects\X3\Graphite\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\Content\obj\x86\Debug\ResolveAssemblyReference.cache

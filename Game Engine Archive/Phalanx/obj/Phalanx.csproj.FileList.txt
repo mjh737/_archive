@@ -1,0 +1,5 @@
+bin\Debug\Phalanx.dll
+bin\Debug\Phalanx.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Phalanx.dll
+obj\Debug\Phalanx.pdb

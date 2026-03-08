@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Graphics="Microsoft.Xna.Framework.Graphics" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>background.jpg</Source>
+      <Name>background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\background.xnb</Output>
+      <Time>2008-08-11T20:48:52.809+01:00</Time>
+    </Item>
+    <Item>
+      <Source>heightmap.bmp</Source>
+      <Name>heightmap</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\heightmap.xnb</Output>
+      <Time>2008-08-12T23:21:44.949+01:00</Time>
+    </Item>
+    <Item>
+      <Source>landfill.jpg</Source>
+      <Name>landfill</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\landfill.xnb</Output>
+      <Time>2008-08-13T18:46:51.4143901+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Lobby\back.jpg</Source>
+      <Name>Lobby\back</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\Lobby\back.xnb</Output>
+      <Time>2008-08-15T19:54:39.3838981+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Lobby\down.jpg</Source>
+      <Name>Lobby\down</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\Lobby\down.xnb</Output>
+      <Time>2008-08-15T19:54:39.4306981+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Lobby\front.jpg</Source>
+      <Name>Lobby\front</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\Lobby\front.xnb</Output>
+      <Time>2008-08-15T19:54:39.4618981+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Lobby\left.jpg</Source>
+      <Name>Lobby\left</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\Lobby\left.xnb</Output>
+      <Time>2008-08-15T19:54:39.4774981+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Lobby\right.jpg</Source>
+      <Name>Lobby\right</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\Lobby\right.xnb</Output>
+      <Time>2008-08-15T19:54:39.5554981+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Lobby\up.jpg</Source>
+      <Name>Lobby\up</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\Lobby\up.xnb</Output>
+      <Time>2008-08-15T19:54:39.5710981+01:00</Time>
+    </Item>
+    <Item>
+      <Source>tigertex.bmp</Source>
+      <Name>tigertex</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\tigertex.xnb</Output>
+      <Time>2008-08-16T11:45:03.9381996+01:00</Time>
+    </Item>
+    <Item>
+      <Source>TransformColor.fx</Source>
+      <Name>TransformColor</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\TransformColor.xnb</Output>
+      <Time>2008-08-11T21:48:13.6648+01:00</Time>
+    </Item>
+    <Item>
+      <Source>TransformTexture.fx</Source>
+      <Name>TransformTexture</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\TransformTexture.xnb</Output>
+      <Time>2008-08-15T19:40:37.3412981+01:00</Time>
+    </Item>
+    <Item>
+      <Source>TextureShader.fx</Source>
+      <Name>TextureShader</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\TextureShader.xnb</Output>
+      <Time>2008-08-16T08:00:40.7030512+01:00</Time>
+    </Item>
+    <Item>
+      <Source>tahoma.spritefont</Source>
+      <Name>tahoma</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\tahoma.xnb</Output>
+      <Time>2008-08-11T22:31:44.8914+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ship.x</Source>
+      <Name>ship</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\ship.xnb</Output>
+      <Time>2008-08-16T10:01:39.7094512+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\ship%0.xml</Key>
+        <Value>2008-08-25T15:13:53.5771802+01:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>man.x</Source>
+      <Name>man</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\man.xnb</Output>
+      <Time>2008-08-16T10:22:47.2542512+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\man%0.xml</Key>
+        <Value>2008-08-25T15:13:58.4201802+01:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>tiger.x</Source>
+      <Name>tiger</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\tiger.xnb</Output>
+      <Time>2008-08-25T12:52:49.5924465+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\tiger%0.xml</Key>
+        <Value>2008-08-25T15:13:59.0581802+01:00</Value>
+      </Dependency>
+      <Request>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\tigertex%0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>ship.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\ship%0.xml</Output>
+      <Time>2008-08-16T10:01:39.7094512+01:00</Time>
+    </Item>
+    <Item>
+      <Source>man.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\man%0.xml</Output>
+      <Time>2008-08-16T10:22:47.2542512+01:00</Time>
+    </Item>
+    <Item>
+      <Source>tiger.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\tiger%0.xml</Output>
+      <Time>2008-08-25T12:52:49.5924465+01:00</Time>
+    </Item>
+    <Item>
+      <Source>tigertex.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\tigertex%0.xnb</Output>
+      <Time>2008-08-16T11:45:03.9381996+01:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <RootDirectory>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Matt\Desktop\Shuttle\Visual Studio 2008\Projects\Xapphire\X3\Graphite\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>c:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2008-04-26T12:32:08+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>c:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2008-04-26T12:32:50+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>c:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2008-04-26T12:32:40+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>c:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2008-04-26T12:31:52+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>c:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2008-04-26T12:31:52+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.0.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2008-08-21T13:18:45.5346513+01:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
