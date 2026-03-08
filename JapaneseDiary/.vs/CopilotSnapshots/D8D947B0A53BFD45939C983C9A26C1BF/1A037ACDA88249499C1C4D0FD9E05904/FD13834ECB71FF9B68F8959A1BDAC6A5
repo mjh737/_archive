@@ -1,0 +1,16 @@
+﻿@page
+@model JapaneseDiary.Pages.Diary.IndexModel
+@{
+    ViewData["Title"] = "Japan Diary";
+}
+
+<section class="container py-4">
+    <header class="mb-3">
+        <h1 class="display-6">Japan Diary</h1>
+        <p class="text-muted">Year in Japan diary entries</p>
+    </header>
+
+    <article class="diary-content" style="white-space: pre-wrap; line-height: 1.7; font-size: 1.05rem;">
+        @Model.Content
+    </article>
+</section>

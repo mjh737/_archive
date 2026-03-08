@@ -1,0 +1,6 @@
+C:\Projects\Personal\Xmas2\bin\Debug\Xmas2.exe.config
+C:\Projects\Personal\Xmas2\bin\Debug\Xmas2.exe
+C:\Projects\Personal\Xmas2\bin\Debug\Xmas2.pdb
+C:\Projects\Personal\Xmas2\obj\Debug\Xmas2.csprojResolveAssemblyReference.cache
+C:\Projects\Personal\Xmas2\obj\Debug\Xmas2.exe
+C:\Projects\Personal\Xmas2\obj\Debug\Xmas2.pdb

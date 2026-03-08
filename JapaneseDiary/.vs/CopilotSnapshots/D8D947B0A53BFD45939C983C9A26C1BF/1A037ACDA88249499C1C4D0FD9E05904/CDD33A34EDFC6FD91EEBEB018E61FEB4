@@ -1,0 +1,24 @@
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+
+namespace JapaneseDiary.Pages.Diary
+{
+    public class IndexModel : PageModel
+    {
+        public string Content { get; private set; } = string.Empty;
+
+        public void OnGet()
+        {
+            Content = @"Wednesday 1st October 1997
+Well I’m here now and it’s finally sunk in – I’m here for a year, not there.  I know I’ll only feel miserable for a week or two about leaving things behind so I’ll just get on and try to enjoy it.
+The flight left on time(ish) and was very long, the boredom not being broken at all by the three crap films.  Four hours of waiting and train travelling followed this and only cost 65 quid.  The Saiki’s are very nice although conversation is very hard; Japanese food may take a little longer to appreciate.  Must go to bed now, it’s nearly nine o’clock; I’ve been up about 50 hours.  Spent 30 mins with Saiki Jnr after this – quite good.
+
+Thursday 2nd October 1997 7:00 a.m.
+I woke up at 5:30 a.m. and can’t go back to sleep, jetlag and all.  I’ve just been laying here for the last hour and a half feeling sorry for myself.  I want to do something to keep myself busy but I’ve just got to hang around until I go to uni at 1:00 p.m.  Anyway, I’ll leave this until I can be more constructive.  ‘365 and I wake up’ ! (KT – Remember?).  Had a meeting – met Saiko and Hiromi and two Bristol students, Rachel and Andy (I think!).  Andy knows Kirsty from Cardiff – small world.  Went to City Hall to get Gaijin Card and cycled around Kobari.  Spent two hours putting a map together with Saiki-san but the most important page was missed out.  There are about 25 pages, all bigger than A4, all glued together, far too big to be practical but it’s the thought that counts.  Went to bed and completed a Japanese language evaluation questionnaire and read a little ‘Trainspotting’ – it’s very good so far – thanks Kate.
+
+Friday 3rd October
+There was nobody here when I got up so I had to work out what breakfast was for me – not easy when there are a dozen different bowls of various sashimi etc.  When I left the house, I decided to pump the bike tyres up but accidentally half emptied it instead so had to cycle to the station a bit awkwardly (Is that spelt right? – I’ve forgotten English already!).  I met Balàzs and Rich and then the other two. We spent the day in Niigata, went to a noodle restaurant for lunch (where I had my first lager since arriving) and went up the “Rainbow Tower” - very high, very “spinning” but very “having a good view”.  I bought ‘The Firm’, Nihongo de and a nice bag for ¥2000 with which I am very pleased.
+
+...";
+        }
+    }
+}

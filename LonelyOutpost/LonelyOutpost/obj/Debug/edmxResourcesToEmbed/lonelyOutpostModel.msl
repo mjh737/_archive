@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LonelyOutpostModelStoreContainer" CdmEntityContainer="LonelyOutpostEntities">
+    <EntitySetMapping Name="aspnet_Users">
+      <EntityTypeMapping TypeName="LonelyOutpostModel.aspnet_Users">
+        <MappingFragment StoreEntitySet="aspnet_Users">
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+          <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+          <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+          <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Statistics">
+      <EntityTypeMapping TypeName="LonelyOutpostModel.Statistic">
+        <MappingFragment StoreEntitySet="Statistics">
+          <ScalarProperty Name="TimeMeasured" ColumnName="TimeMeasured" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodItems">
+      <EntityTypeMapping TypeName="LonelyOutpostModel.FoodItem">
+        <MappingFragment StoreEntitySet="FoodItems">
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Calories" ColumnName="Calories" />
+          <ScalarProperty Name="BasicAmount" ColumnName="BasicAmount" />
+          <ScalarProperty Name="FoodName" ColumnName="FoodName" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodCategories">
+      <EntityTypeMapping TypeName="LonelyOutpostModel.FoodCategory">
+        <MappingFragment StoreEntitySet="FoodCategories">
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodJournals">
+      <EntityTypeMapping TypeName="LonelyOutpostModel.FoodJournal">
+        <MappingFragment StoreEntitySet="FoodJournal">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="JournalID" ColumnName="JournalID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WordLists">
+      <EntityTypeMapping TypeName="LonelyOutpostModel.WordList">
+        <MappingFragment StoreEntitySet="WordList">
+          <ScalarProperty Name="Known" ColumnName="Known" />
+          <ScalarProperty Name="Word" ColumnName="Word" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewWords">
+      <EntityTypeMapping TypeName="LonelyOutpostModel.NewWord">
+        <MappingFragment StoreEntitySet="NewWords">
+          <ScalarProperty Name="Word" ColumnName="Word" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

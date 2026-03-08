@@ -1,0 +1,57 @@
+﻿@page
+@model JapaneseDiary.Pages.Diary.IndexModel
+@{
+    ViewData["Title"] = "Japan Diary";
+}
+
+<section class="container py-4">
+    <header class="mb-3 d-flex justify-content-between align-items-center gap-3">
+        <div>
+            <h1 class="display-6 mb-1">Japan Diary</h1>
+            <p class="text-muted mb-0">Search and browse by date</p>
+        </div>
+        <form method="get" class="d-flex" role="search">
+            <input type="search" name="q" value="@Model.Query" class="form-control" placeholder="Search entries" />
+            <button class="btn btn-primary ms-2" type="submit">Search</button>
+        </form>
+    </header>
+
+    @if (!Model.Entries.Any())
+    {
+        <div class="alert alert-info">No entries found.</div>
+    }
+    else
+    {
+        <div class="list-group">
+            @foreach (var e in Model.Entries)
+            {
+                <div class="list-group-item">
+                    <h2 class="h5 mb-2">@e.Title</h2>
+                    <div class="text-muted mb-2">@e.Date.ToString("dddd, dd MMMM yyyy")</div>
+                    <div style="white-space: pre-wrap; line-height: 1.7;">
+                        @e.Text
+                    </div>
+                </div>
+            }
+        </div>
+
+        <nav class="mt-4" aria-label="Diary pagination">
+            <ul class="pagination">
+                <li class="page-item @(Model.CurrentPage == 1 ? "disabled" : null)">
+                    <a class="page-link" href="?page=@(Model.CurrentPage - 1)&q=@Model.Query">Previous</a>
+                </li>
+
+                @for (var i = 1; i <= Model.TotalPages; i++)
+                {
+                    <li class="page-item @(Model.CurrentPage == i ? "active" : null)">
+                        <a class="page-link" href="?page=@i&q=@Model.Query">@i</a>
+                    </li>
+                }
+
+                <li class="page-item @(Model.CurrentPage == Model.TotalPages ? "disabled" : null)">
+                    <a class="page-link" href="?page=@(Model.CurrentPage + 1)&q=@Model.Query">Next</a>
+                </li>
+            </ul>
+        </nav>
+    }
+</section>

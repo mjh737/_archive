@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LonelyOutpostModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="LonelyOutpostModelStoreContainer">
+          <EntitySet Name="aspnet_Users" EntityType="LonelyOutpostModel.Store.aspnet_Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Statistics" EntityType="LonelyOutpostModel.Store.Statistics" store:Type="Tables" Schema="Health" />
+          <EntitySet Name="FoodCategories" EntityType="LonelyOutpostModel.Store.FoodCategories" store:Type="Tables" Schema="lonelyoutpost" />
+          <EntitySet Name="FoodItems" EntityType="LonelyOutpostModel.Store.FoodItems" store:Type="Tables" Schema="lonelyoutpost" />
+          <EntitySet Name="FoodJournal" EntityType="LonelyOutpostModel.Store.FoodJournal" store:Type="Tables" Schema="lonelyoutpost" />
+          <EntitySet Name="NewWords" EntityType="LonelyOutpostModel.Store.NewWords" store:Type="Tables" Schema="lonelyoutpost" />
+          <EntitySet Name="WordList" EntityType="LonelyOutpostModel.Store.WordList" store:Type="Tables" Schema="lonelyoutpost" />
+          <AssociationSet Name="FK_FoodItems_FoodCategories" Association="LonelyOutpostModel.Store.FK_FoodItems_FoodCategories">
+            <End Role="FoodCategories" EntitySet="FoodCategories" />
+            <End Role="FoodItems" EntitySet="FoodItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FoodJournal_FoodItems" Association="LonelyOutpostModel.Store.FK_FoodJournal_FoodItems">
+            <End Role="FoodItems" EntitySet="FoodItems" />
+            <End Role="FoodJournal" EntitySet="FoodJournal" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredUserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Statistics">
+          <Key>
+            <PropertyRef Name="Day" />
+          </Key>
+          <Property Name="Day" Type="int" Nullable="false" />
+          <Property Name="Weight" Type="float" Nullable="false" />
+          <Property Name="TimeMeasured" Type="time" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FoodCategories">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FoodItems">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FoodName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BasicAmount" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Calories" Type="int" Nullable="false" />
+          <Property Name="Category" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FoodJournal">
+          <Key>
+            <PropertyRef Name="JournalID" />
+          </Key>
+          <Property Name="JournalID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Day" Type="smalldatetime" Nullable="false" />
+          <Property Name="ItemID" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NewWords">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Word" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="WordList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Word" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Known" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_FoodItems_FoodCategories">
+          <End Role="FoodCategories" Type="LonelyOutpostModel.Store.FoodCategories" Multiplicity="1" />
+          <End Role="FoodItems" Type="LonelyOutpostModel.Store.FoodItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FoodCategories">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="FoodItems">
+              <PropertyRef Name="Category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FoodJournal_FoodItems">
+          <End Role="FoodItems" Type="LonelyOutpostModel.Store.FoodItems" Multiplicity="1" />
+          <End Role="FoodJournal" Type="LonelyOutpostModel.Store.FoodJournal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FoodItems">
+              <PropertyRef Name="ItemID" />
+            </Principal>
+            <Dependent Role="FoodJournal">
+              <PropertyRef Name="ItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LonelyOutpostModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="LonelyOutpostEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="aspnet_Users" EntityType="LonelyOutpostModel.aspnet_Users" />
+          <EntitySet Name="Statistics" EntityType="LonelyOutpostModel.Statistic" />
+          <EntitySet Name="FoodItems" EntityType="LonelyOutpostModel.FoodItem" />
+          <EntitySet Name="FoodCategories" EntityType="LonelyOutpostModel.FoodCategory" />
+          <EntitySet Name="FoodJournals" EntityType="LonelyOutpostModel.FoodJournal" />
+          <AssociationSet Name="FK_FoodItems_FoodCategories" Association="LonelyOutpostModel.FK_FoodItems_FoodCategories">
+            <End Role="FoodCategory" EntitySet="FoodCategories" />
+            <End Role="FoodItem" EntitySet="FoodItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FoodJournal_FoodItems" Association="LonelyOutpostModel.FK_FoodJournal_FoodItems">
+            <End Role="FoodItem" EntitySet="FoodItems" />
+            <End Role="FoodJournal" EntitySet="FoodJournals" />
+          </AssociationSet>
+          <EntitySet Name="WordLists" EntityType="LonelyOutpostModel.WordList" />
+          <EntitySet Name="NewWords" EntityType="LonelyOutpostModel.NewWord" />
+        </EntityContainer>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredUserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobileAlias" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsAnonymous" Nullable="false" />
+          <Property Type="DateTime" Name="LastActivityDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Statistic">
+          <Key>
+            <PropertyRef Name="Day" />
+          </Key>
+          <Property Type="Int32" Name="Day" Nullable="false" />
+          <Property Type="Double" Name="Weight" Nullable="false" />
+          <Property Type="Time" Name="TimeMeasured" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FoodItem">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Type="Int32" Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FoodName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BasicAmount" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Calories" Nullable="false" />
+          <Property Type="Int32" Name="Category" Nullable="false" />
+          <NavigationProperty Name="FoodCategory" Relationship="LonelyOutpostModel.FK_FoodItems_FoodCategories" FromRole="FoodItem" ToRole="FoodCategory" />
+          <NavigationProperty Name="FoodJournals" Relationship="LonelyOutpostModel.FK_FoodJournal_FoodItems" FromRole="FoodItem" ToRole="FoodJournal" />
+        </EntityType>
+        <EntityType Name="FoodCategory">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Type="Int32" Name="CategoryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FoodItems" Relationship="LonelyOutpostModel.FK_FoodItems_FoodCategories" FromRole="FoodCategory" ToRole="FoodItem" />
+        </EntityType>
+        <EntityType Name="FoodJournal">
+          <Key>
+            <PropertyRef Name="JournalID" />
+          </Key>
+          <Property Type="Int32" Name="JournalID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Day" Nullable="false" />
+          <Property Type="Int32" Name="ItemID" Nullable="false" />
+          <Property Type="Double" Name="Quantity" Nullable="false" />
+          <NavigationProperty Name="FoodItem" Relationship="LonelyOutpostModel.FK_FoodJournal_FoodItems" FromRole="FoodJournal" ToRole="FoodItem" />
+        </EntityType>
+        <Association Name="FK_FoodItems_FoodCategories">
+          <End Type="LonelyOutpostModel.FoodCategory" Role="FoodCategory" Multiplicity="1" />
+          <End Type="LonelyOutpostModel.FoodItem" Role="FoodItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FoodCategory">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="FoodItem">
+              <PropertyRef Name="Category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FoodJournal_FoodItems">
+          <End Type="LonelyOutpostModel.FoodItem" Role="FoodItem" Multiplicity="1" />
+          <End Type="LonelyOutpostModel.FoodJournal" Role="FoodJournal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FoodItem">
+              <PropertyRef Name="ItemID" />
+            </Principal>
+            <Dependent Role="FoodJournal">
+              <PropertyRef Name="ItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="WordList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Word" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Known" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NewWord">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Word" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LonelyOutpostModelStoreContainer" CdmEntityContainer="LonelyOutpostEntities">
+          <EntitySetMapping Name="aspnet_Users">
+            <EntityTypeMapping TypeName="LonelyOutpostModel.aspnet_Users">
+              <MappingFragment StoreEntitySet="aspnet_Users">
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+                <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Statistics">
+            <EntityTypeMapping TypeName="LonelyOutpostModel.Statistic">
+              <MappingFragment StoreEntitySet="Statistics">
+                <ScalarProperty Name="TimeMeasured" ColumnName="TimeMeasured" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FoodItems">
+            <EntityTypeMapping TypeName="LonelyOutpostModel.FoodItem">
+              <MappingFragment StoreEntitySet="FoodItems">
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Calories" ColumnName="Calories" />
+                <ScalarProperty Name="BasicAmount" ColumnName="BasicAmount" />
+                <ScalarProperty Name="FoodName" ColumnName="FoodName" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FoodCategories">
+            <EntityTypeMapping TypeName="LonelyOutpostModel.FoodCategory">
+              <MappingFragment StoreEntitySet="FoodCategories">
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FoodJournals">
+            <EntityTypeMapping TypeName="LonelyOutpostModel.FoodJournal">
+              <MappingFragment StoreEntitySet="FoodJournal">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="JournalID" ColumnName="JournalID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WordLists">
+            <EntityTypeMapping TypeName="LonelyOutpostModel.WordList">
+              <MappingFragment StoreEntitySet="WordList">
+                <ScalarProperty Name="Known" ColumnName="Known" />
+                <ScalarProperty Name="Word" ColumnName="Word" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewWords">
+            <EntityTypeMapping TypeName="LonelyOutpostModel.NewWord">
+              <MappingFragment StoreEntitySet="NewWords">
+                <ScalarProperty Name="Word" ColumnName="Word" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="lonelyOutpostModel">
+        <EntityTypeShape EntityType="LonelyOutpostModel.aspnet_Users" Width="1.5" PointX="3.375" PointY="0.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="LonelyOutpostModel.Statistic" Width="1.5" PointX="0.75" PointY="0.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="LonelyOutpostModel.FoodItem" Width="1.5" PointX="0.75" PointY="3.75" Height="1.9802864583333322" />
+        <EntityTypeShape EntityType="LonelyOutpostModel.FoodCategory" Width="1.5" PointX="0.75" PointY="7.125" Height="1.5956835937499987" />
+        <EntityTypeShape EntityType="LonelyOutpostModel.FoodJournal" Width="1.5" PointX="3" PointY="4" Height="1.9802864583333335" />
+        <AssociationConnector Association="LonelyOutpostModel.FK_FoodItems_FoodCategories" >
+          <ConnectorPoint PointX="1.5" PointY="7.125" />
+          <ConnectorPoint PointX="1.5" PointY="6.1148893229166656" />
+        </AssociationConnector>
+        <AssociationConnector Association="LonelyOutpostModel.FK_FoodJournal_FoodItems" >
+          <ConnectorPoint PointX="2.25" PointY="4.9901432291666667" />
+          <ConnectorPoint PointX="3" PointY="4.9901432291666667" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="LonelyOutpostModel.WordList" Width="1.5" PointX="5.375" PointY="3.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="LonelyOutpostModel.NewWord" Width="1.5" PointX="5.375" PointY="0.75" Height="1.4033821614583317" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

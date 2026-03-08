@@ -1,0 +1,51 @@
+﻿using System.Text.Json;
+using JapaneseDiary.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+
+namespace JapaneseDiary.Pages.Diary
+{
+    public class IndexModel : PageModel
+    {
+        private const int PageSize = 10;
+
+        public IReadOnlyList<DiaryEntry> Entries { get; private set; } = Array.Empty<DiaryEntry>();
+        public int CurrentPage { get; private set; }
+        public int TotalPages { get; private set; }
+        public string? Query { get; private set; }
+
+        public void OnGet(int page = 1, string? q = null)
+        {
+            Query = q;
+            var jsonPath = Path.Combine(Directory.GetCurrentDirectory(), "JapaneseDiary", "Data", "diary.json");
+            if (!System.IO.File.Exists(jsonPath))
+            {
+                Entries = Array.Empty<DiaryEntry>();
+                CurrentPage = 1;
+                TotalPages = 1;
+                return;
+            }
+
+            using var stream = System.IO.File.OpenRead(jsonPath);
+            var all = JsonSerializer.Deserialize<List<DiaryEntry>>(stream, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            }) ?? new List<DiaryEntry>();
+
+            if (!string.IsNullOrWhiteSpace(Query))
+            {
+                var ql = Query.Trim();
+                all = all.Where(e => e.Title.Contains(ql, StringComparison.OrdinalIgnoreCase)
+                                   || e.Text.Contains(ql, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+
+            // Sort by date
+            all = all.OrderBy(e => e.Date).ToList();
+
+            TotalPages = Math.Max(1, (int)Math.Ceiling(all.Count / (double)PageSize));
+            CurrentPage = Math.Clamp(page, 1, TotalPages);
+
+            Entries = all.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
+        }
+    }
+}

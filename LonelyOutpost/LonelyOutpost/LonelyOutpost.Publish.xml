@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="ftp://ftp.lonelyoutpost.com/lonelyoutpost.com/wwwroot" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="lonelyOutpost" publishMethod="FTP" replaceMatchingFiles="True" userName="lonelyoutpost" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAASHBR0yikdUi+JnXIKfluygAAAAACAAAAAAADZgAAqAAAABAAAABq3a/kmw/OO3P2kH84SDh9AAAAAASAAACgAAAAEAAAAHiJZheTGrHBZvhIY5vKW3IYAAAANEBqGv08J9eC1G6Is9pC69LnH/p5UHNtFAAAAJPQyMHpit1j+G363VCZJ5Q1xE1R" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="10/22/2013 08:50:35" />
+    <file relUrl="Images/O.png" publishTime="08/07/2013 10:21:41" />
+    <file relUrl="login.aspx" publishTime="08/08/2013 08:48:07" />
+    <file relUrl="Default.aspx" publishTime="08/12/2013 19:33:39" />
+    <file relUrl="Private/Words.aspx" publishTime="08/30/2013 09:05:10" />
+    <file relUrl="Images/MeAndIndia.jpg" publishTime="08/07/2013 13:54:48" />
+    <file relUrl="Private/Weight.aspx" publishTime="08/28/2013 13:49:22" />
+    <file relUrl="lonelyoutpost.Master" publishTime="08/30/2013 09:03:32" />
+    <file relUrl="Private/Default.aspx" publishTime="08/29/2013 15:30:13" />
+    <file relUrl="P.aspx" publishTime="08/07/2013 14:48:46" />
+    <file relUrl="bin/lonelyoutpost.pdb" publishTime="10/22/2013 08:50:21" />
+    <file relUrl="Private/Jenni/Default.aspx" publishTime="08/13/2013 12:54:50" />
+    <file relUrl="bin/lonelyoutpost.dll" publishTime="10/22/2013 08:50:21" />
+    <file relUrl="Private/WeightStats.aspx" publishTime="08/28/2013 15:12:23" />
+    <file relUrl="lonelyoutpost.css" publishTime="08/07/2013 15:25:58" />
+    <file relUrl="Private/web.config" publishTime="08/07/2013 13:23:26" />
+    <file relUrl="Images/O.ico" publishTime="08/07/2013 15:29:13" />
+  </publishProfile>
+</publishData>

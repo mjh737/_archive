@@ -1,0 +1,7 @@
+S:\PersonalApps\JapaneseDiary\JapaneseDiary\bin\Debug\JapaneseDiary.exe.config
+S:\PersonalApps\JapaneseDiary\JapaneseDiary\bin\Debug\JapaneseDiary.exe
+S:\PersonalApps\JapaneseDiary\JapaneseDiary\bin\Debug\JapaneseDiary.pdb
+S:\PersonalApps\JapaneseDiary\JapaneseDiary\obj\Debug\JapaneseDiary.csproj.CoreCompileInputs.cache
+S:\PersonalApps\JapaneseDiary\JapaneseDiary\obj\Debug\JapaneseDiary.exe
+S:\PersonalApps\JapaneseDiary\JapaneseDiary\obj\Debug\JapaneseDiary.pdb
+S:\PersonalApps\JapaneseDiary\JapaneseDiary\obj\Debug\JapaneseDiary.csprojResolveAssemblyReference.cache

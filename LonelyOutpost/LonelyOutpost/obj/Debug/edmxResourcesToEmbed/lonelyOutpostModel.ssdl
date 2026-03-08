@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LonelyOutpostModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="LonelyOutpostModelStoreContainer">
+    <EntitySet Name="aspnet_Users" EntityType="LonelyOutpostModel.Store.aspnet_Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Statistics" EntityType="LonelyOutpostModel.Store.Statistics" store:Type="Tables" Schema="Health" />
+    <EntitySet Name="FoodCategories" EntityType="LonelyOutpostModel.Store.FoodCategories" store:Type="Tables" Schema="lonelyoutpost" />
+    <EntitySet Name="FoodItems" EntityType="LonelyOutpostModel.Store.FoodItems" store:Type="Tables" Schema="lonelyoutpost" />
+    <EntitySet Name="FoodJournal" EntityType="LonelyOutpostModel.Store.FoodJournal" store:Type="Tables" Schema="lonelyoutpost" />
+    <EntitySet Name="NewWords" EntityType="LonelyOutpostModel.Store.NewWords" store:Type="Tables" Schema="lonelyoutpost" />
+    <EntitySet Name="WordList" EntityType="LonelyOutpostModel.Store.WordList" store:Type="Tables" Schema="lonelyoutpost" />
+    <AssociationSet Name="FK_FoodItems_FoodCategories" Association="LonelyOutpostModel.Store.FK_FoodItems_FoodCategories">
+      <End Role="FoodCategories" EntitySet="FoodCategories" />
+      <End Role="FoodItems" EntitySet="FoodItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FoodJournal_FoodItems" Association="LonelyOutpostModel.Store.FK_FoodJournal_FoodItems">
+      <End Role="FoodItems" EntitySet="FoodItems" />
+      <End Role="FoodJournal" EntitySet="FoodJournal" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="LoweredUserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Statistics">
+    <Key>
+      <PropertyRef Name="Day" />
+    </Key>
+    <Property Name="Day" Type="int" Nullable="false" />
+    <Property Name="Weight" Type="float" Nullable="false" />
+    <Property Name="TimeMeasured" Type="time" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FoodCategories">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FoodItems">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FoodName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BasicAmount" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Calories" Type="int" Nullable="false" />
+    <Property Name="Category" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FoodJournal">
+    <Key>
+      <PropertyRef Name="JournalID" />
+    </Key>
+    <Property Name="JournalID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Day" Type="smalldatetime" Nullable="false" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewWords">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Word" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WordList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Word" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Known" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_FoodItems_FoodCategories">
+    <End Role="FoodCategories" Type="LonelyOutpostModel.Store.FoodCategories" Multiplicity="1" />
+    <End Role="FoodItems" Type="LonelyOutpostModel.Store.FoodItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FoodCategories">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="FoodItems">
+        <PropertyRef Name="Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FoodJournal_FoodItems">
+    <End Role="FoodItems" Type="LonelyOutpostModel.Store.FoodItems" Multiplicity="1" />
+    <End Role="FoodJournal" Type="LonelyOutpostModel.Store.FoodJournal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FoodItems">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="FoodJournal">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

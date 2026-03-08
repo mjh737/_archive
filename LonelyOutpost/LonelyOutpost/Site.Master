@@ -1,0 +1,117 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="LonelyOutpost.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>The Lonely Outpost</title>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+  <form id="form1" runat="server">
+    <div id="container">
+
+      <div id="header">
+    	<h1><a href="/">lonely outpost</a></h1>
+        <h2>cool, catchy slogan goes here!</h2>
+          
+          <div class="clear">
+              
+          </div>
+      </div>
+
+      <div id="nav">
+    	<ul>
+        	<li><asp:LinkButton ID="LinkButton1" PostBackUrl="~/Default.aspx" runat="server">Home</asp:LinkButton></li>
+            <li><asp:LinkButton ID="LinkButton2" PostBackUrl="~/Public/News.aspx" runat="server">News</asp:LinkButton></li>
+            <li><asp:LinkButton ID="LinkButton3" PostBackUrl="~/Public/Photos.aspx" runat="server">Photos</asp:LinkButton></li>
+            <li><asp:LinkButton ID="LinkButton4" PostBackUrl="~/Private/Default.aspx" runat="server">Private</asp:LinkButton></li>
+            <li><asp:LinkButton ID="LinkButton5" PostBackUrl="~/Admin/Default.aspx" runat="server">Admin</asp:LinkButton></li>
+            <li><asp:LinkButton ID="LinkButton6" PostBackUrl="~/Public/Contact.aspx" runat="server">Contact</asp:LinkButton></li>
+            <li><asp:LoginStatus ID="LoginStatus1" runat="server" /></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="body">
+	  
+      <div id="content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+      </div>
+
+      <div class="sidebar">
+        <ul>
+          <li>
+            <h4><span>Latest</span></h4>
+            <ul class="blocklist">
+        	    <li><asp:LinkButton ID="LinkButton7" PostBackUrl="~/Default.aspx" runat="server">Home</asp:LinkButton></li>
+                <li><asp:LinkButton ID="LinkButton8" PostBackUrl="~/Public/News.aspx" runat="server">News</asp:LinkButton></li>
+                <li><asp:LinkButton ID="LinkButton9" PostBackUrl="~/Public/Photos.aspx" runat="server">Photos</asp:LinkButton></li>
+                <li><asp:LinkButton ID="LinkButton10" PostBackUrl="~/Private/Default.aspx" runat="server">Private</asp:LinkButton></li>
+                <li><asp:LinkButton ID="LinkButton11" PostBackUrl="~/Admin/Default.aspx" runat="server">Admin</asp:LinkButton></li>
+                <li><asp:LinkButton ID="LinkButton12" PostBackUrl="~/Public/Contact.aspx" runat="server">Contact</asp:LinkButton></li>
+            </ul>
+          </li>
+             
+          <li>
+            <h4>About</h4>
+            <ul>
+                <li><p style="margin: 0;">Welcome to my new website.  Come in and have a look around!  Leave your shoes by the door while I stick the kettle on!</p></li>
+            </ul>
+           </li>
+                
+           <li>
+                <h4>Search</h4>
+
+                    <p>
+                        <input type="text" size="22" value="" name="s" class="s" />
+                        <input type="submit" class="searchsubmit formbutton" value="Search" />
+                    </p>
+
+            </li>
+                
+            <li>
+                <h4>Sponsors</h4>
+                <ul>
+                    <li><a href="" title="Sponsor 1"><strong>Sponsor 1</strong></a> - if you want to sponsor this website please let me know! </li>
+                    <li><a href="" title="Sponsor 2"><strong>Sponsor 2</strong></a> - it's not free you know!</li>
+                    <li><a href="" title="Sponsor 3"><strong>Sponsor 3</strong></a> - or make a one-off donation!</li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+        </div>
+    	<div class="clear"></div>
+    
+    <div id="footer">
+      <div class="footer-content">
+    	<div class="footer-width">
+
+            <span class="sitename">lonely outpost</span>
+                <p class="footer-links">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="Default.aspx">Home</a> |
+                <a href="/Public/News.aspx">News</a> |
+                <a href="/Public/Photos.aspx">Photos</a> |
+                <a href="/Private/Default.aspx">Private</a> |
+                <a href="/Admin/Default.aspx">Admin</a> |
+                <a href="/Public/Contact.aspx">Contact</a>
+
+            </p>
+         </div>
+
+      <div class="footer-width footer-bottom">
+        <p>&copy; Lonely Outpost 2011. Design by <a href="http://www.lonelyoutpost.com">Matt Hewitt</a></p>
+      </div>
+    </div>
+  </div>
+
+</form>
+
+</body>
+</html>

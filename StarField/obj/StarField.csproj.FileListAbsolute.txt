@@ -1,0 +1,11 @@
+C:\Users\Matt\Documents\Visual Studio 2005\Projects\StarField\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Matt\Documents\Visual Studio 2005\Projects\StarField\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Matt\Documents\Visual Studio 2005\Projects\StarField\obj\x86\Debug\StarField.obj.x86.Debug.Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Matt\Documents\Visual Studio 2005\Projects\StarField\bin\x86\Debug\StarField.exe
+C:\Users\Matt\Documents\Visual Studio 2005\Projects\StarField\bin\x86\Debug\StarField.pdb
+C:\Users\Matt\Documents\Visual Studio 2005\Projects\StarField\obj\x86\Debug\StarField.exe
+C:\Users\Matt\Documents\Visual Studio 2005\Projects\StarField\obj\x86\Debug\StarField.pdb
+C:\Users\Matt\Documents\Visual Studio 2005\Projects\StarField\bin\x86\Debug\Content\effects.xnb
+C:\Users\Matt\Documents\Visual Studio 2005\Projects\StarField\bin\x86\Debug\Content\effects.fx
+C:\Users\Matt\Documents\Visual Studio 2005\Projects\StarField\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\Matt\Documents\Visual Studio 2005\Projects\StarField\bin\x86\Debug\Content\SpriteFont1.spritefont

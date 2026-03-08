@@ -1,0 +1,6 @@
+C:\Projects\LuddersAlgorithm\LuddersAlgorithm\bin\Debug\LuddersAlgorithm.exe.config
+C:\Projects\LuddersAlgorithm\LuddersAlgorithm\obj\Debug\LuddersAlgorithm.csprojResolveAssemblyReference.cache
+C:\Projects\LuddersAlgorithm\LuddersAlgorithm\bin\Debug\LuddersAlgorithm.exe
+C:\Projects\LuddersAlgorithm\LuddersAlgorithm\bin\Debug\LuddersAlgorithm.pdb
+C:\Projects\LuddersAlgorithm\LuddersAlgorithm\obj\Debug\LuddersAlgorithm.exe
+C:\Projects\LuddersAlgorithm\LuddersAlgorithm\obj\Debug\LuddersAlgorithm.pdb

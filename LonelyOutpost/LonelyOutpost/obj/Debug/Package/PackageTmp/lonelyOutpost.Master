@@ -1,0 +1,96 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="lonelyOutpost.Master.cs" Inherits="lonelyOutpost.lonelyOutpost" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>lonelyOutpost</title>
+    <link rel="shortcut icon" href="~/Images/o.ico"/>
+    <link href="lonelyOutpost.css" rel="stylesheet" type="text/css" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script type="text/javascript">    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+    } (document, 'script', 'facebook-jssdk'));</script>
+
+    <form id="form1" runat="server">
+    <div id="wrapper">
+        <div id="headerwrap">
+        <div id="header">
+            <asp:ImageButton ID="logo" ImageUrl="~/Images/O.png" runat="server" />
+            <asp:Label ID="title" runat="server" Text="lonelyOutpost"></asp:Label>
+            <div id="headerright">
+        
+        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+        </div>
+        </div>
+        
+        
+        </div>
+        <div id="navigationwrap">
+        <div id="navigation">
+            <div id='cssmenu'>
+<ul>
+   <li><a href='/default.aspx'><span>Home</span></a></li>
+   <li class='has-sub'><a href='#'><span>Photos</span></a>
+      <ul>
+         <li><a href='#'><span>Sophia</span></a></li>
+         <li class='last'><a href='#'><span>India</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='Private/Default.aspx'><span>Private</span></a>
+         <ul>
+         <li><asp:HyperLink ID="HyperLink1" NavigateUrl="~/Private/Weight.aspx" runat="server">Weight</asp:HyperLink></li>
+         <li><asp:HyperLink ID="HyperLink2" NavigateUrl="~/Private/Jenni/Default.aspx" runat="server">Jenni</asp:HyperLink></li>
+      </ul></li>
+   <li><a href='#'><span>About</span></a></li>
+   <li class='last'><a href='#'><span>Contact</span></a></li>
+</ul>
+</div>
+        </div>
+        </div>
+        <div id="leftcolumnwrap">
+        <div id="leftcolumn">
+            <p>Welcome to the lonely outpost!</p>
+            <asp:Image ID="Image1" Width="140px" ImageUrl="~/Images/MeAndIndia.jpg" runat="server" />
+            <p></p>
+        </div>
+        </div>
+        <div id="contentwrap">
+        <div id="content">
+           <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+               
+        
+            </asp:ContentPlaceHolder>
+        </div>
+        </div>
+        <div id="rightcolumnwrap">
+        <div id="rightcolumn">
+<p></p>
+        </div>
+        </div>
+        <div id="footerwrap">
+        <div id="footer">
+        <div style="float: left; margin-top: 8px">
+        <iframe src="http://free.timeanddate.com/clock/i3r48f1b/n136/tluk/fn14/fcfff/tc658ad9/pc658ad9/avb/pt3/pb3/tt0/th1/ta1/tb1" frameborder="0" width="296" height="23"></iframe>
+
+        </div>
+        <div style="float: right">lonelyOutpost<br />© Matt Hewitt 2013</div> 
+        <div style="float: right; margin-right: 10px; margin-top: 10px" class="fb-like" data-href="http://www.lonelyOutpost.com" data-width="450" data-layout="button_count" data-show-faces="true" data-send="false"></div>
+        
+        </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
