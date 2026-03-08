@@ -1,0 +1,10 @@
+C:\Users\mjh\Desktop\Stuff\Projects\WealthDB\WealthDB\bin\Debug\WealthDB.exe
+C:\Users\mjh\Desktop\Stuff\Projects\WealthDB\WealthDB\bin\Debug\WealthDB.pdb
+C:\Users\mjh\Desktop\Stuff\Projects\WealthDB\WealthDB\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\mjh\Desktop\Stuff\Projects\WealthDB\WealthDB\obj\Debug\WealthDB.Form1.resources
+C:\Users\mjh\Desktop\Stuff\Projects\WealthDB\WealthDB\obj\Debug\WealthDB.LedgerPanel.resources
+C:\Users\mjh\Desktop\Stuff\Projects\WealthDB\WealthDB\obj\Debug\WealthDB.Properties.Resources.resources
+C:\Users\mjh\Desktop\Stuff\Projects\WealthDB\WealthDB\obj\Debug\WealthDB.csproj.GenerateResource.Cache
+C:\Users\mjh\Desktop\Stuff\Projects\WealthDB\WealthDB\obj\Debug\WealthDB.exe
+C:\Users\mjh\Desktop\Stuff\Projects\WealthDB\WealthDB\obj\Debug\WealthDB.pdb
+C:\Users\mjh\Desktop\Stuff\Projects\WealthDB\WealthDB\bin\Debug\WealthDB.exe.config

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xPhysics", "xPhysics\xPhysics.csproj", "{30DDE4F7-5FCA-46DC-BC00-80F07EDFAE4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30DDE4F7-5FCA-46DC-BC00-80F07EDFAE4B}.Debug|x86.ActiveCfg = Debug|x86
+		{30DDE4F7-5FCA-46DC-BC00-80F07EDFAE4B}.Debug|x86.Build.0 = Debug|x86
+		{30DDE4F7-5FCA-46DC-BC00-80F07EDFAE4B}.Release|x86.ActiveCfg = Release|x86
+		{30DDE4F7-5FCA-46DC-BC00-80F07EDFAE4B}.Release|x86.Build.0 = Release|x86
+		{3B34D24A-2F72-4B00-9A64-E5574E2C6801}.Debug|x86.ActiveCfg = Debug|x86
+		{3B34D24A-2F72-4B00-9A64-E5574E2C6801}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

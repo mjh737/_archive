@@ -1,0 +1,9 @@
+C:\Users\Matt\Desktop\Stuff\Projects\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\Matt\Desktop\Stuff\Projects\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\Matt\Desktop\Stuff\Projects\Calculator\Calculator\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Matt\Desktop\Stuff\Projects\Calculator\Calculator\obj\Debug\Calculator.Form1.resources
+C:\Users\Matt\Desktop\Stuff\Projects\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\Users\Matt\Desktop\Stuff\Projects\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.Cache
+C:\Users\Matt\Desktop\Stuff\Projects\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\Matt\Desktop\Stuff\Projects\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\Users\Matt\Desktop\Stuff\Projects\Calculator\Calculator\obj\Debug\Calculator.AboutBox.resources

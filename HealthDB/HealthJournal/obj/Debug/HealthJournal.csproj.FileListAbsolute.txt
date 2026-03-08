@@ -1,0 +1,30 @@
+C:\Users\mjh\Desktop\Stuff\Projects\Visual Studio\HealthJournal\HealthJournal\bin\Debug\HealthJournal.exe.config
+C:\Users\mjh\Desktop\Stuff\Projects\Visual Studio\HealthJournal\HealthJournal\bin\Debug\HealthJournal.exe
+C:\Users\mjh\Desktop\Stuff\Projects\Visual Studio\HealthJournal\HealthJournal\bin\Debug\HealthJournal.pdb
+C:\Users\mjh\Desktop\Stuff\Projects\Visual Studio\HealthJournal\HealthJournal\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\mjh\Desktop\Stuff\Projects\Visual Studio\HealthJournal\HealthJournal\obj\Debug\HealthJournal.Properties.Resources.resources
+C:\Users\mjh\Desktop\Stuff\Projects\Visual Studio\HealthJournal\HealthJournal\obj\Debug\HealthJournal.csproj.GenerateResource.Cache
+C:\Users\mjh\Desktop\Stuff\Projects\Visual Studio\HealthJournal\HealthJournal\obj\Debug\HealthJournal.exe
+C:\Users\mjh\Desktop\Stuff\Projects\Visual Studio\HealthJournal\HealthJournal\obj\Debug\HealthJournal.pdb
+C:\Users\mjh\Desktop\Stuff\Projects\Visual Studio\HealthJournal\HealthJournal\obj\Debug\HealthJournal.JournalForm.resources
+C:\Users\mjh\Desktop\Stuff\Projects\Visual Studio\HealthJournal\HealthJournal\obj\Debug\HealthJournal.NewRunForm.resources
+C:\Users\mjh\Desktop\Stuff\Projects\Visual Studio\HealthJournal\HealthJournal\obj\Debug\HealthJournal.RouteDetailsForm.resources
+C:\Users\mjh\Desktop\Stuff\Projects\Visual Studio\HealthJournal\HealthJournal\obj\Debug\HealthJournal.RoutesForm.resources
+C:\Users\mjh\Desktop\Stuff\Projects\HealthJournal\HealthJournal\bin\Debug\HealthJournal.exe.config
+C:\Users\mjh\Desktop\Stuff\Projects\HealthJournal\HealthJournal\obj\Debug\HealthJournal.exe
+C:\Users\mjh\Desktop\Stuff\Projects\HealthJournal\HealthJournal\obj\Debug\HealthJournal.pdb
+C:\Users\mjh\Desktop\Stuff\Projects\Visual Studio\HealthJournal\HealthJournal\obj\Debug\HealthJournal.NewStatForm.resources
+C:\Users\mjh\Desktop\Stuff\Projects\HealthDB\HealthJournal\bin\Debug\HealthJournal.exe.config
+C:\Users\mjh\Desktop\Stuff\Projects\HealthDB\HealthJournal\obj\Debug\HealthJournal.exe
+C:\Users\mjh\Desktop\Stuff\Projects\HealthDB\HealthJournal\obj\Debug\HealthJournal.pdb
+C:\Users\mjh\Desktop\Stuff\Projects\HealthDB\HealthJournal\bin\Debug\HealthJournal.exe
+C:\Users\mjh\Desktop\Stuff\Projects\HealthDB\HealthJournal\bin\Debug\HealthJournal.pdb
+C:\Users\mjh\Desktop\Stuff\Projects\HealthDB\HealthJournal\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\mjh\Desktop\Stuff\Projects\HealthDB\HealthJournal\obj\Debug\HealthJournal.JournalForm.resources
+C:\Users\mjh\Desktop\Stuff\Projects\HealthDB\HealthJournal\obj\Debug\HealthJournal.NewRunForm.resources
+C:\Users\mjh\Desktop\Stuff\Projects\HealthDB\HealthJournal\obj\Debug\HealthJournal.NewStatForm.resources
+C:\Users\mjh\Desktop\Stuff\Projects\HealthDB\HealthJournal\obj\Debug\HealthJournal.RouteDetailsForm.resources
+C:\Users\mjh\Desktop\Stuff\Projects\HealthDB\HealthJournal\obj\Debug\HealthJournal.Properties.Resources.resources
+C:\Users\mjh\Desktop\Stuff\Projects\HealthDB\HealthJournal\obj\Debug\HealthJournal.RoutesForm.resources
+C:\Users\mjh\Desktop\Stuff\Projects\HealthDB\HealthJournal\obj\Debug\HealthJournal.csproj.GenerateResource.Cache
+C:\Users\mjh\Desktop\Stuff\Projects\HealthDB\HealthJournal\obj\Debug\HealthJournal.NewWalkForm.resources

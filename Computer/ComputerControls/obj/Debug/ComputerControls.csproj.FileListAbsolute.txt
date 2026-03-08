@@ -1,0 +1,15 @@
+C:\Users\Matt\Desktop\Stuff\Projects\Computer\ComputerControls\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Matt\Desktop\Stuff\Projects\Computer\ComputerControls\bin\Debug\ComputerControls.dll
+C:\Users\Matt\Desktop\Stuff\Projects\Computer\ComputerControls\bin\Debug\ComputerControls.pdb
+C:\Users\Matt\Desktop\Stuff\Projects\Computer\ComputerControls\obj\Debug\ComputerControls.dll
+C:\Users\Matt\Desktop\Stuff\Projects\Computer\ComputerControls\obj\Debug\ComputerControls.pdb
+C:\Users\mjh\Desktop\Stuff\Projects\Computer\ComputerControls\bin\Debug\ComputerControls.dll
+C:\Users\mjh\Desktop\Stuff\Projects\Computer\ComputerControls\bin\Debug\ComputerControls.pdb
+C:\Users\mjh\Desktop\Stuff\Projects\Computer\ComputerControls\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\mjh\Desktop\Stuff\Projects\Computer\ComputerControls\obj\Debug\ComputerControls.dll
+C:\Users\mjh\Desktop\Stuff\Projects\Computer\ComputerControls\obj\Debug\ComputerControls.pdb
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\Emulation\Computer\ComputerControls\bin\Debug\ComputerControls.dll
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\Emulation\Computer\ComputerControls\bin\Debug\ComputerControls.pdb
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\Emulation\Computer\ComputerControls\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\Emulation\Computer\ComputerControls\obj\Debug\ComputerControls.dll
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\Emulation\Computer\ComputerControls\obj\Debug\ComputerControls.pdb

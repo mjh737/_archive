@@ -1,0 +1,14 @@
+C:\Users\m4nti55a\Documents\Visual Studio 2008\Projects\MyBooks\MyBooks\bin\Debug\MyBooks.exe.config
+C:\Users\m4nti55a\Documents\Visual Studio 2008\Projects\MyBooks\MyBooks\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\m4nti55a\Documents\Visual Studio 2008\Projects\MyBooks\MyBooks\obj\Debug\MyBooks.Properties.Resources.resources
+C:\Users\m4nti55a\Documents\Visual Studio 2008\Projects\MyBooks\MyBooks\obj\Debug\MyBooks.csproj.GenerateResource.Cache
+C:\Users\m4nti55a\Documents\Visual Studio 2008\Projects\MyBooks\MyBooks\bin\Debug\MyBooks.exe
+C:\Users\m4nti55a\Documents\Visual Studio 2008\Projects\MyBooks\MyBooks\bin\Debug\MyBooks.pdb
+C:\Users\m4nti55a\Documents\Visual Studio 2008\Projects\MyBooks\MyBooks\obj\Debug\MyBooks.exe
+C:\Users\m4nti55a\Documents\Visual Studio 2008\Projects\MyBooks\MyBooks\obj\Debug\MyBooks.pdb
+C:\Users\m4nti55a\Documents\Visual Studio 2008\Projects\MyBooks\MyBooks\obj\Debug\MyBooks.AuthorForm.resources
+C:\Users\m4nti55a\Documents\Visual Studio 2008\Projects\MyBooks\MyBooks\obj\Debug\MyBooks.AuthorsForm.resources
+C:\Users\m4nti55a\Documents\Visual Studio 2008\Projects\MyBooks\MyBooks\obj\Debug\MyBooks.BookForm.resources
+C:\Users\m4nti55a\Documents\Visual Studio 2008\Projects\MyBooks\MyBooks\obj\Debug\MyBooks.BooksForm.resources
+C:\Users\m4nti55a\Documents\Visual Studio 2008\Projects\MyBooks\MyBooks\obj\Debug\MyBooks.GenreForm.resources
+C:\Users\m4nti55a\Documents\Visual Studio 2008\Projects\MyBooks\MyBooks\obj\Debug\MyBooks.GenresForm.resources

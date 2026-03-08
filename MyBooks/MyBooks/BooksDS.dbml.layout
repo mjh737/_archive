@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BooksDS">
+  <DataContextMoniker Name="/BooksDSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="96e1628e-4c0d-49d5-a516-8a1759607aa6" absoluteBounds="1, 0.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/BooksDSDataContext/Author" />
+      <nestedChildShapes>
+        <elementListCompartment Id="48e91463-7335-46dc-8046-0ba3a075b2c1" absoluteBounds="1.0150000000000001, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c7386d1d-bbdc-41fd-b9fc-af677fbead9d" absoluteBounds="3.25, 0.625, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/BooksDSDataContext/Genre" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e15bf60b-424c-4b88-a7d3-43d3afeb5920" absoluteBounds="3.265, 1.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9d7361be-0d1f-4a9e-8f33-56a9dd4eb8f0" absoluteBounds="1.5, 3.125, 2, 1.9631982421875">
+      <DataClassMoniker Name="/BooksDSDataContext/Book" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8f37df9e-ee1a-4771-a708-385373cea606" absoluteBounds="1.5150000000000001, 3.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

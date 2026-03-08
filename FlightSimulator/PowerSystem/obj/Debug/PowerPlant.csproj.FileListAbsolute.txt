@@ -1,0 +1,7 @@
+C:\Projects\FlightSimulator\PowerSystem\bin\Debug\PowerSystem.dll
+C:\Projects\FlightSimulator\PowerSystem\bin\Debug\PowerSystem.pdb
+C:\Projects\FlightSimulator\PowerSystem\bin\Debug\Utilities.dll
+C:\Projects\FlightSimulator\PowerSystem\bin\Debug\Utilities.pdb
+C:\Projects\FlightSimulator\PowerSystem\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\FlightSimulator\PowerSystem\obj\Debug\PowerSystem.dll
+C:\Projects\FlightSimulator\PowerSystem\obj\Debug\PowerSystem.pdb

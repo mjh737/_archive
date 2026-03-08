@@ -1,0 +1,16 @@
+C:\Users\mjh\Desktop\Stuff\Projects\HexEditor\HexEditor\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\mjh\Desktop\Stuff\Projects\HexEditor\HexEditor\obj\Debug\HexEditor.Form1.resources
+C:\Users\mjh\Desktop\Stuff\Projects\HexEditor\HexEditor\obj\Debug\HexEditor.Properties.Resources.resources
+C:\Users\mjh\Desktop\Stuff\Projects\HexEditor\HexEditor\obj\Debug\HexEditor.csproj.GenerateResource.Cache
+C:\Users\mjh\Desktop\Stuff\Projects\HexEditor\HexEditor\bin\Debug\HexEditor.exe
+C:\Users\mjh\Desktop\Stuff\Projects\HexEditor\HexEditor\bin\Debug\HexEditor.pdb
+C:\Users\mjh\Desktop\Stuff\Projects\HexEditor\HexEditor\obj\Debug\HexEditor.exe
+C:\Users\mjh\Desktop\Stuff\Projects\HexEditor\HexEditor\obj\Debug\HexEditor.pdb
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\HexEditor\HexEditor\obj\Debug\HexEditor.exe
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\HexEditor\HexEditor\obj\Debug\HexEditor.pdb
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\HexEditor\HexEditor\bin\Debug\HexEditor.exe
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\HexEditor\HexEditor\bin\Debug\HexEditor.pdb
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\HexEditor\HexEditor\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\HexEditor\HexEditor\obj\Debug\HexEditor.Form1.resources
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\HexEditor\HexEditor\obj\Debug\HexEditor.Properties.Resources.resources
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\HexEditor\HexEditor\obj\Debug\HexEditor.csproj.GenerateResource.Cache

@@ -1,0 +1,6 @@
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\xPhysics\xPhysics\bin\x86\Debug\xPhysics.dll
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\xPhysics\xPhysics\bin\x86\Debug\xPhysics.pdb
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\xPhysics\xPhysics\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\xPhysics\xPhysics\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\xPhysics\xPhysics\obj\x86\Debug\xPhysics.dll
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\xPhysics\xPhysics\obj\x86\Debug\xPhysics.pdb

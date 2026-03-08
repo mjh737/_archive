@@ -1,0 +1,5 @@
+C:\Users\Matt\Desktop\Stuff\Projects\Computer\CPU\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Matt\Desktop\Stuff\Projects\Computer\CPU\bin\Debug\CPU.dll
+C:\Users\Matt\Desktop\Stuff\Projects\Computer\CPU\bin\Debug\CPU.pdb
+C:\Users\Matt\Desktop\Stuff\Projects\Computer\CPU\obj\Debug\CPU.dll
+C:\Users\Matt\Desktop\Stuff\Projects\Computer\CPU\obj\Debug\CPU.pdb

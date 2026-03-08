@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="LONELYOUTPOST" Class="HealthDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=THSV04\SOUTHWARK;Initial Catalog=LONELYOUTPOST;Integrated Security=True" SettingsObjectName="HealthJournal.Properties.Settings" SettingsPropertyName="LONELYOUTPOSTConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="Health.Routes" Member="Routes">
+    <Type Name="Route">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Miles" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PersonalBest" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Health.Stats" Member="Stats">
+    <Type Name="Stat">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="TimeOfDayID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FatRatio" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BMI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LSys" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LDia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RSys" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RDia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HeartRate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Health.Journal" Member="Journals">
+    <Type Name="Journal">
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Walk" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Run" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Direct Work]" Member="Direct_Work" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Direct Home]" Member="Direct_Home" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FatRatio" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="BMI" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="LSys" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="LDia" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HeartRate" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RSys" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RDia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Health.TimeOfDay" Member="TimeOfDays">
+    <Type Name="TimeOfDay">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Health.Activities" Member="Activities">
+    <Type Name="Activity">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RouteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Time" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="TimeOfDayID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Walk" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

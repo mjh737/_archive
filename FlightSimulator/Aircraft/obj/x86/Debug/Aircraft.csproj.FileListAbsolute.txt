@@ -1,0 +1,9 @@
+C:\Projects\FlightSimulator\Aircraft\bin\Debug\Aircraft.exe
+C:\Projects\FlightSimulator\Aircraft\bin\Debug\Aircraft.pdb
+C:\Projects\FlightSimulator\Aircraft\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Projects\FlightSimulator\Aircraft\obj\x86\Debug\FlightSimulator.Properties.Resources.resources
+C:\Projects\FlightSimulator\Aircraft\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Projects\FlightSimulator\Aircraft\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Projects\FlightSimulator\Aircraft\obj\x86\Debug\Aircraft.exe
+C:\Projects\FlightSimulator\Aircraft\obj\x86\Debug\Aircraft.pdb
+C:\Projects\FlightSimulator\Aircraft\obj\x86\Debug\FlightSimulator.Aircraft.resources

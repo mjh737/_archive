@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Wealth">
+  <DataContextMoniker Name="/WealthDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ccb514b1-9425-43aa-946e-ac358d683478" absoluteBounds="0.5, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/WealthDataContext/Transaction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf41e335-496c-4029-9fb4-786450414151" absoluteBounds="0.515, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="94a57300-94d1-4a66-8393-ef5723ae7f1f" absoluteBounds="3, 0.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/WealthDataContext/FinancialInstitution" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e998ea91-0f51-4f0f-815a-d7e0deb72c9e" absoluteBounds="3.015, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3081cd58-2e6c-4f67-8354-ed4d19cf4f37" absoluteBounds="4, 2.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/WealthDataContext/Account" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3391ebc2-73fa-4f5f-aef8-71893e71b804" absoluteBounds="4.015, 3.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

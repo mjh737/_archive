@@ -1,0 +1,5 @@
+C:\Users\mjh\Documents\Visual Studio 2008\Projects\ParseStar\ParseStar\bin\Debug\ParseStar.exe
+C:\Users\mjh\Documents\Visual Studio 2008\Projects\ParseStar\ParseStar\bin\Debug\ParseStar.pdb
+C:\Users\mjh\Documents\Visual Studio 2008\Projects\ParseStar\ParseStar\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\mjh\Documents\Visual Studio 2008\Projects\ParseStar\ParseStar\obj\Debug\ParseStar.exe
+C:\Users\mjh\Documents\Visual Studio 2008\Projects\ParseStar\ParseStar\obj\Debug\ParseStar.pdb

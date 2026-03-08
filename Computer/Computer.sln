@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Computer", "Computer\Computer.csproj", "{2E2CD49D-EF3B-4DEE-925C-FEC58D3FD249}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motherboard", "CPU\Motherboard.csproj", "{578C228B-4D27-41B4-86E7-F0643C20490B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerControls", "ComputerControls\ComputerControls.csproj", "{CC5FFC83-95CC-43C8-BA81-2A3377C077C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E2CD49D-EF3B-4DEE-925C-FEC58D3FD249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E2CD49D-EF3B-4DEE-925C-FEC58D3FD249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E2CD49D-EF3B-4DEE-925C-FEC58D3FD249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E2CD49D-EF3B-4DEE-925C-FEC58D3FD249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{578C228B-4D27-41B4-86E7-F0643C20490B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{578C228B-4D27-41B4-86E7-F0643C20490B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{578C228B-4D27-41B4-86E7-F0643C20490B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{578C228B-4D27-41B4-86E7-F0643C20490B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC5FFC83-95CC-43C8-BA81-2A3377C077C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC5FFC83-95CC-43C8-BA81-2A3377C077C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC5FFC83-95CC-43C8-BA81-2A3377C077C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC5FFC83-95CC-43C8-BA81-2A3377C077C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
