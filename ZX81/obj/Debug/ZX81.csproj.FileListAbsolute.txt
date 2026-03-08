@@ -1,0 +1,9 @@
+C:\Projects\Personal\ZX81\bin\Debug\ZX81.exe.config
+C:\Projects\Personal\ZX81\bin\Debug\ZX81.exe
+C:\Projects\Personal\ZX81\bin\Debug\ZX81.pdb
+C:\Projects\Personal\ZX81\obj\Debug\ZX81.csprojResolveAssemblyReference.cache
+C:\Projects\Personal\ZX81\obj\Debug\ZX81.Form1.resources
+C:\Projects\Personal\ZX81\obj\Debug\ZX81.Properties.Resources.resources
+C:\Projects\Personal\ZX81\obj\Debug\ZX81.csproj.GenerateResource.Cache
+C:\Projects\Personal\ZX81\obj\Debug\ZX81.exe
+C:\Projects\Personal\ZX81\obj\Debug\ZX81.pdb

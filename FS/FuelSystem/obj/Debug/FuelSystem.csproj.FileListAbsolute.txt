@@ -1,0 +1,7 @@
+C:\Projects\FlightSimulator\FuelSystem\bin\Debug\FuelSystem.dll
+C:\Projects\FlightSimulator\FuelSystem\bin\Debug\FuelSystem.pdb
+C:\Projects\FlightSimulator\FuelSystem\bin\Debug\Utilities.dll
+C:\Projects\FlightSimulator\FuelSystem\bin\Debug\Utilities.pdb
+C:\Projects\FlightSimulator\FuelSystem\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\FlightSimulator\FuelSystem\obj\Debug\FuelSystem.dll
+C:\Projects\FlightSimulator\FuelSystem\obj\Debug\FuelSystem.pdb

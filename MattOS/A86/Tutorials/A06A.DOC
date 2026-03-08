@@ -1,0 +1,421 @@
+CHAPTER 6    THE 86 INSTRUCTION SET
+
+
+In this chapter we discuss in detail the instruction set
+supported by both the A86 and A386 assemblers.  To use any of the
+32-bit registers, the extra segment regsiters FS and GS, or the
+instructions marked with a "3", "4", or "5" in the instruction
+list, you need my A386 assembler, available only if you register
+both A86 and D86.
+
+
+Effective Addresses
+
+Most memory data accessing in the 86 family is accomplished via
+the mechanism of the effective address.  Wherever an effective
+address specifier "eb", "ew" "ed", or "ev" appears in the list of
+instructions, you may use a wide variety of actual operands in
+that instruction.  These include general registers, memory
+variables, and a variety of indexed memory quantities.
+
+GENERAL REGISTERS: Wherever an "ew" appears, you can use any of
+the 16-bit registers AX,BX,CX,DX,SI,DI,SP, or BP.  Wherever an
+"eb" appears, you can use any of the 8-bit registers
+AL,BL,CL,DL,AH,BH,CH, or DH.  Whenever an "ed" occurs, you can
+(on A386) use any of the 32-bit registers
+EAX,EBX,ECX,EDX,ESI,EDI,EBP, or ESP.  For A86, "ev" is the same
+as "ew"; for A386, it means you can use either a 16-bit or a
+32-bit register.  For example, the "ADD ev,rv" form subsumes the
+16-bit register-to-register adds; for example, ADD AX,BX; ADD
+SI,BP; ADD SP,AX.  On A386, this form also includes 32-bit
+register-to-register adds; e.g., ADD EBX,ESI.  At the machine
+level the 16-vs.-32 distinction is made by an "operand override"
+opcode byte, 66H, that A386 places before the instruction to
+signal a switch from 16-bits to 32-bits.
+
+MEMORY VARIABLES: Wherever an "eb", "ew", "ed", or "ev" appears,
+you can use a memory variable of the indicated size: byte, word,
+doubleword, or either-word-or-doubleword.  Variables are
+typically declared in the DATA segment, using a DD declaration
+for a doubleword variable, a DW declaration for a word variable,
+or a DB declaration for a byte variable.  For example, you can
+declare variables:
+
+     DATA_PTR  DW ?
+     ESC_CHAR  DB ?
+
+Later, you can load or store these variables:
+
+     MOV ESC_CHAR,BL    ; store the byte variable ESC_CHAR
+     MOV DATA_PTR,081   ; initialize DATA_PTR
+     MOV SI,DATA_PTR    ; load DATA_PTR into SI for use
+     LODSW              ; fetch the word pointed to by DATA_PTR
+
+Alternatively, you can address specific unnamed memory locations
+by enclosing the location value in square brackets; for example,
+
+     MOV AL,[02000]     ; load contents of location 02000 into AL
+                                                              6-2
+
+Note that A86 discerned from context (loading into AL) that a
+BYTE at 02000 was intended.  Sometimes this is impossible, and
+you must specify byte or word:
+
+     INC B[02000]       ; increment the byte at location 02000
+     MOV W[02000],0     ; set the WORD at location 02000 to zero
+
+
+INDEXED MEMORY: The 86 supports the use of certain registers as
+base pointers and index registers into memory.  BX and BP are the
+base registers; SI and DI are the index registers.  You may
+combine at most one base register, at most one index register,
+and a constant number into a run time pointer that determines the
+location of the effective address memory to be used in the
+instruction.  These can be given explicitly, by enclosing the
+index registers in brackets:
+
+     MOV AX,[BX]
+     MOV CX,W[SI+17]
+     MOV AX,[BX+SI+5]
+     MOV AX,[BX][SI]5   ; another way to write the same instr.
+
+Or, indexing can be accomplished by declaring variables in a
+based structure (see the STRUC directive in Chapter 9):
+
+     STRUC [BP]        ; NOTE: based structures are unique to A86!
+       BP_SAVE   DW ?  ; BP_SAVE is a word at [BP]
+       RET_ADDR  DW ?  ; RET_ADDR is a word at [BP+2]
+       PARM1     DW ?  ; PARM1 is a word at [BP+4]
+       PARM2     DW ?  ; PARM2 is a word at [BP+6]
+     ENDS              ; end of structure
+     INC PARM1         ; equivalent to INC W[BP+4]
+
+Finally, indexing can be done by mixing explicit components with
+declared ones:
+
+     TABLE DB 4,2,1,3,5
+     MOV AL,TABLE[BX]      ; load byte number BX of TABLE
+
+The 386 processor also supports indexing using any of the eight
+32-bit general registers.  This type of indexing is of limited
+use for memory referencing from real-mode programs (most programs
+running under DOS), since offsets greater than 64K are disallowed
+in real mode (you will get a General Protection Fault if you try
+it).  32-bit indexing is, however, useful in conjunction with the
+LEA instruction, giving an extremely powerful register arithmetic
+instruction.  For example, LEA ECX,[EAX+2*EBX+17000] performs two
+additions and a multiplication, all in a single machine
+instruction.  Since no memory accessed is actually attempted,
+this kind of LEA usage is allowed in real-mode DOS programs.
+                                                              6-3
+
+In 32-bit indexing, you may use one or two of any of the 32-bit
+general registers.  You may also scale one of the indexing
+registers, by multiplying it by 2, 4, or 8.  You may also add or
+subtract a constant of any size up to a doubleword capacity to
+the indexed quantity.  If you use the same register twice and
+scale one of the instances of that register, you get, in effect,
+an odd-number scaling (3, 5, or 9) of that register; e.g., A386
+will allow LEA EAX,[9*EBX] as an abbreviation for LEA
+EAX,[8*EBX+EBX].
+
+Due to coding restrictions, the ESP register can be used only
+once within an indexed quantity, and cannot be scaled.
+
+Some more examples of 32-bit indexing are:
+
+     XCHG DX,[EAX]
+     MOV AL,[EAX+EBX]
+     ADD EBX,[ESI+8*ECX+3391811]
+     LEA ECX,[4*EBX-7]
+
+
+
+Segmentation and Effective Addresses
+
+The 86 family has four segment registers, CS, DS, ES, and SS,
+used to address memory.  The 386 and later processors add two
+more segment registers FS and GS.  Each segment register points
+to 64K bytes of memory within the 1-megabyte memory space of the
+86. (The start of the 64K is calculated by multiplying the
+segment register value by 16; i.e., by shifting the value left by
+one hex digit.)  If your program's code, data and stack areas can
+all fit in the same 64K bytes, you can leave all the segment
+registers set to the same value.  In that case, you won't have to
+think about segment registers: no matter which one is used to
+address memory, you'll still get the same 64K.  If your program
+needs more than 64K, you must point one or more segment registers
+to other parts of the memory space.  In this case, you must take
+care that your memory references use the segment registers you
+intended.
+
+Each effective address memory access has a default segment
+register, to be used if you do not explicitly specify which
+segment register you wish.  For most effective addresses, the
+default segment register is DS.  The exceptions are those
+effective addresses that use the BP register for indexing.  All
+BP-indexed memory references have a default of SS.  (This is
+because BP is intended to be used for addressing local variables,
+stored on the stack.)
+                                                              6-4
+
+If you wish your memory access to use a different segment
+register, you provide a segment override byte before the
+instruction containing the effective address operand.  In the A86
+language, you code the override by giving the name of the segment
+register you wish before the instruction mnemonic.  For example,
+suppose you want to load the AL register with the memory byte
+pointed to by BX.  If you code MOV AL,[BX], the DS register will
+be used to determine which 64K segment BX is pointing to.  If you
+want the byte to come from the CS-segment instead, you code CS
+MOV AL,[BX].  Be aware that the segment override byte has effect
+only upon the single instruction that follows it.  If you have a
+sequence of instructions requiring overrides, you must give an
+override byte before every instruction in the sequence.  (In that
+case, you may wish to consider changing the value of the default
+segment register for the duration of the sequence.)
+
+NOTE: This method for providing segment overrides is unique to
+the A86 assembler!  The assemblers provided by Intel and IBM
+(MS-DOS) attempt to figure out segment allocation for you, and
+plug in segment override bytes "behind your back".  In order to
+do this, those assemblers require you to inform them which
+variables and structures are pointed to by which segment
+registers.  That is what the ASSUME directive in those assemblers
+is all about.  I wrote Intel's first 86 assembler, ASM86, so I
+have been watching the situation since day one.  Over the years,
+I have concluded that the ASSUME mechanism creates far, far more
+confusion that it solves.  So I scrapped it; and the result is an
+assembler with far less red tape.  But if your program needs more
+than 64K, you do have to manage those segment registers yourself;
+so take care!
+
+
+Effective Use of Effective Addresses
+
+Remember that all of the common instructions of the 86 family
+allow effective addresses as operands.  (The only major functions
+that don't are the AL/AX specific ones: multiply, divide, and
+input/output).  This means that you don't have to funnel many
+numbers through AL or AX just to do something with them.  You can
+perform all the common arithmetic, PUSH/POP, and MOVes from any
+general register to any general register; from any memory
+location (indexed if you like) to any register; and (this is most
+often overlooked) from any register TO memory.  The only thing
+you can't do in general is memory-to-memory.  Among the more
+common operations that inexperienced 86 programmers overlook are:
+
+   * setting memory variables to immediate values
+
+   * testing memory variables, and comparing them to constants
+
+   * preserving memory variables by PUSHing and POPping them
+
+   * incrementing and decrementing memory variables
+
+   * adding into memory variables
+                                                              6-5
+
+Encoding of Effective Addresses
+
+This section outlines the number of program opcode bytes
+generated by effective-address specifications.  This will let you
+make judgments when trying to keep your program as small as
+possible.  The precise opcodes generated are explained in the
+text files EFF86.DOC in the A86 package, and EFF386.DOC in the
+A386 package.
+
+Every instruction with an 16-bit effective address has an encoded
+byte, known as the effective address byte, following the
+instruction's main opcode.  (For obscure reasons, Intel calls
+this byte the ModRM byte.)  If the effective address is a memory
+variable, or an indexed memory location with a non-zero constant
+offset, then the effective address byte is immediately followed
+by the offset amount.  Amounts in the range -128 to +127 are
+given by a single signed byte.  Amounts outside that range are
+represented by a 2-byte offset.
+
+In the instruction chart given later in this chapter,
+effective-address specification opcodes are denoted by a slash /
+followed either by the letter "r" or an octal digit.  The meaning
+of the r-or-digit is explained in the EFF*.DOC files.  For
+example, the instruction DIV CX falls under the DIV eb form in
+the instruction chart.  The instruction occupies two bytes: the
+main opcode byte 0F6H, followed by a single effective address
+byte with no constant offsets involved.  Similarly, the
+instruction DIV B[BX] occupies two bytes.  For DIV B[BX+7] you
+must add an offset byte for the 7, making a total of three bytes.
+For DIV B[BX+1000] you must add a 2-byte offset for the 1000,
+making a total of 4 bytes.  For DIV B[02000] (more typically
+coded with a symbolic name such as DIV MY_VAR_NAME), the
+instruction is also 4 bytes: the main opcode byte, the effective
+address byte, and the offset of the memory variable.
+
+An anomalous case is the operand [BP].  The effective-address
+byte encoding for this particular operand was usurped by the
+simple-variable case.  When A86 sees [BP], it must specify an
+8-bit offset whose value is zero.  Thus, the instruction DIV
+B[BP] occupies three bytes, not two. This anomaly does not apply
+to [BP+SI] or [BP+DI].
+
+In A386, 32-bit indexing is signalled by a special address
+override opcode byte (67H) preceding the instruction.  Following
+the override byte is the instruction's main opcode, followed by
+the effective-address specification.  For a simple memory
+variable, the specification consists of a single
+effective-address byte followed by the 4-byte offset of the
+variable.  For indexing involving a single, non-scaled index
+register other than ESP, the specification consists of a single
+byte followed by the constant offset component.  For indexing
+involving two registers, scaling, or the ESP register, there are
+two bytes followed by the constant offset component.  The
+constant offset component occpies no space if the the offset is
+zero, one byte if between -128 to +127, and 4 bytes otherwise.
+There is no provision for a 16-bit-word-sized offset if you are
+using 32-bit indexing.
+                                                              6-6
+
+Note the distinction between the address override byte (67H) and
+the operand override byte (66H).  A86 must supply an address
+override when the instruction involves a memory operand whose
+address has 32 bits.  A86 must supply an operand override when
+the data being manipulated has 32 bits.  In general, when a
+32-bit register name appears inside the square brackets, that's
+an address override; when it appears outside the square brackets,
+that's an operand override.  Examples:
+
+     MOV DX,[BX]      ; needs neither override in a 16-bit segment
+     MOV DX,[EBX]     ; needs an address override
+     MOV EDX,[BX]     ; needs an operand override
+     MOV EDX,[EBX]    ; needs both overrides
+
+Also note that the generation of these override bytes is handled
+automatically by A86 when it scans the operands to an
+instruction.  The only exceptions to this are the no-operand
+string operations: REP MOVSW, LODSD, SCASB, etc.  For these
+instructions, the operand size is signalled by the last letter
+(B, W, or D) of the mnemonic; however, the addressing mode is not
+signalled by the mnemonic.  If you are in 16-bit mode, as all
+simple DOS programs are, you need to precede a string instruction
+with an explicit A4 prefix if you wish to use 32-bit addressing
+([ESI] and/or [EDI] with count ECX).  If you are assembling to a
+32-bit protected-mode segment (when that is implemented) you will
+need to use an explicit A2 prefix if you wish to use 16-bit
+addressing ([SI] and/or [DI] with count CX).
+
+Here are some examples of instruction size involving 32-bit
+indexing in a real-mode segment: DIV B[EBX] requires an address
+override byte, the single instruction opcode byte 0F6H, and an
+effective address byte: total 3 bytes.  DIV B[EBX+7] adds the
+offset byte 07, making the total 4 bytes.  DIV B[EBX+1000] forces
+the offset to be 4 bytes, making the total 7 bytes.  DIV
+B[EBX+EDI*2] does not require an offset, but the extra index
+register expands the effective address specifier to two bytes,
+making the total 4 bytes.  Similarly, DIV B[ESP] requires two
+effective address bytes (total 4 instruction bytes), because the
+ESP register is a special case.  Finally, DIV
+ES:D[EBX+EDI*2+1000] requires three overrides (segment override
+ES, operand override for the D, and address override for 32-bit
+indexing), the main opcode byte, two effective address opcode
+bytes, and a 4-byte offset: total 10 bytes.
+
+The [BP] extra-byte anomaly applies, in 32-bit mode, to [EBP] as
+well.  In fact, the anomaly also applies when another indexing
+register (scaled or not) is added to [EBP].  A386 must generate
+an offset byte whose value is 0 when it sees any no-offset forms
+involving [EBP].
+                                                              6-7
+
+The 386 and later processors, when running in protected mode,
+allow segments whose default word-size is 32 bits instead of
+16-bits.  In such segments, the usage of the operand and address
+override bytes is reversed: 32-bit operands do not require the
+operand-override byte, and 16-bit operands do.  (8-bit operands
+never require an operand-override byte.) 32-bit memory addresses
+do not require an address-override byte; 16-bit addresses do.
+This mode will be recognized by A386 whenever the USE32 directive
+is used; however, at the time of this writing, this feature is
+not yet implemented.  All DOS programs, which run in real mode,
+have a default of 16 bits.
+
+
+How to Read the Instruction Set Chart
+
+The following chart summarizes the machine instructions you can
+program with A86.  In order to use the chart, you need to learn
+the meanings of the specifiers (each given by 2 lower case
+letters) that follow most of the instruction mnemonics.  Each
+specifier indicates the type of operand (register byte, immediate
+word, etc.) that follows the mnemonic to produce the given
+opcodes.  The "v" type, for A86, is the same as "w" -- it denotes
+a 16-bit word.  On A386, "v" denotes either a word or doubleword,
+depending on the presence of an operand override prefix byte.
+
+"c"  means the operand is a code label, pointing to a part of the
+    program to be jumped to or called.  A86 will also accept a
+    constant offset in this place (or a constant segment-offset
+    pair in the case of "cp").  "cb" is a label within about 128
+    bytes (in either direction) of the current location.  "cv" is
+    a label within the same code segment as this program; "cp" is
+    a pair of constants separated by a colon-- the segment value
+    to the left of the colon, and the offset to the right.  The
+    offset is always a word in A86; it can be either a word or a
+    doubleword in A386.  Note that in both the cb and cv cases,
+    the object code generated is the offset from the location
+    following the current instruction, not the absolute location
+    of the label operand.  In some assemblers (most notably for
+    the Z-80 processor) you have to code this offset explicitly
+    by putting "$-" before every relative jump operand in your
+    source code.  You do NOT need to, and should not do so with
+    A86.
+
+"e"  means the operand is an Effective Address.  The concept of
+    an Effective Address is central to the 86 machine
+    architecture, and thus to 86 assembly language programming.
+    It is described in detail at the start of this chapter.  We
+    summarize here by saying that an Effective Address is either
+    a general purpose register, a memory variable, or an indexed
+    memory quantity.  For example, the instruction "ADD rb,eb"
+    includes the instructions: ADD AL,BL, and ADD CH,BYTEVAR, and
+    ADD DL,B[BX+17].
+                                                              6-8
+
+"i"  means the operand is an immediate constant, provided as part
+    of the instruction itself.  "ib" is a byte-sized constant;
+    "iw" is a constant occupying a full 16-bit word.  The operand
+    can also be a label, defined with a colon.  In that case, the
+    immediate constant which is the location of the label is
+    used.  Examples:  "MOV rw,iw" includes the instructions: MOV
+    AX,17, or MOV SI,VAR_ARRAY, where "VAR_ARRAY:" appears
+    somewhere in the program, defined with a colon.  NOTE that if
+    VAR_ARRAY were defined without a colon, e.g., "VAR_ARRAY DW
+    1,2,3", then "MOV SI,VAR_ARRAY" would be a "MOV rw,ew" NOT a
+    "MOV rw,iw".  The MOV would move the contents of memory at
+    VAR_ARRAY (in this case 1) into SI, instead of the location
+    of the memory. To load the location, you can code "MOV
+    SI,OFFSET VAR_ARRAY".
+
+"m"  means a memory variable or an indexed memory quantity; i.e.,
+    any Effective Address EXCEPT a register.
+
+"r"  means the operand is a general purpose register.  The 8 "rb"
+    registers are AL,BL,CL,DL,AH,BH,CH,DH; the 8 "rw" registers
+    are AX,BX,CX,DX,SI,DI,BP,SP.
+
+    "rv/m" is used in the Bit Test instructions to denote either
+    a word-or-doubleword register, or an array of bits in memory
+    that can any length.
+
+NOTE: The following chart gives all instructions for all
+processors through the Pentium.  You must take care to use only
+the instructions appropriate for the target processor of your
+program (the P switch will enforce this for you: see Chapter 3).
+If an instruction form does not run on all processors, there is a
+letter or digit just before the description field.  "N" means the
+instruction runs only on NEC processors (which are rare nowdays).
+A digit x means the instruction runs on the x86 or later: 1 for
+186, 2 for 286, 3 for 386, 4 for 486, 5 for Pentium.
+Instructions with 3 or greater are recognized only by my A386
+assembler, received only by those who register both A86 and D86.
+
+

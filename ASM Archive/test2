@@ -1,0 +1,53 @@
+;  Source name     : EAT2.ASM
+;  Executable name : EAT2.COM
+;  Code model      : Real Mode Flat Model
+;  Version         : 1.0
+;  Created date    : 7/31/1999
+;  Last update     : 9/11/1999
+;  Author          : Jeff Duntemann
+;  Description     : A simple example of a DOS .COM file programmed using
+;                    NASM-IDE 1.1 and NASM 0.98 and incorporating procedures.
+
+
+[BITS 16]               ; Set 16 bit code generation
+[ORG 0x0100]            ; Set code start address to 100h (COM file)
+
+[SECTION .text]         ; Section containing code
+
+Start:	
+    mov  DX,EatMsg1     ; Load offset of Eat1 string into DX
+    call Writeln        ;   and display it
+    mov  DX,EatMsg2     ; Load offset of Ear2 string into DX
+    call Writeln        ;   and display it
+
+    mov  ax, 04C00H     ; This function exits the program
+    int  21H            ; and returns control to DOS.
+
+
+;----------------------------------------|
+;           PROCEDURE SECTION            |
+;----------------------------------------|
+
+Write:
+    mov  AH,09H       ; Select DOS service 9: Print String
+    int  21H          ; Call DOS
+    ret               ; Return to the caller
+
+
+Writeln:
+    call Write        ; Display the string proper through Write
+    mov  DX,CRLF      ; Load offset of newline string to DX
+    call Write        ; Display the newline string through Write
+    ret               ; Return to the caller
+
+;----------------------------------------|
+;           DATA SECTION                 |
+;----------------------------------------|
+
+
+[SECTION .data]              ; Section containing initialised data
+
+EatMsg1   DB      "Eat at Joe's...",'$'
+EatMsg2   DB      "...ten million flies can't ALL be wrong!",'$'
+CRLF      DB      0DH,0AH,'$'
+

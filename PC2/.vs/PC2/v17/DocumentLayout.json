@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\matth\\Documents\\GitHub\\PersonalRepos\\PC2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6BAD636C-0FB1-4BA6-A6AF-108E7055E5B5}|PC2\\PC2.csproj|c:\\users\\matth\\documents\\github\\personalrepos\\pc2\\pc2\\bios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BAD636C-0FB1-4BA6-A6AF-108E7055E5B5}|PC2\\PC2.csproj|solutionrelative:pc2\\bios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F74E8EED-8C45-43D8-B7D5-EF49939929B8}|Compiler\\Compiler.csproj|c:\\users\\matth\\documents\\github\\personalrepos\\pc2\\compiler\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F74E8EED-8C45-43D8-B7D5-EF49939929B8}|Compiler\\Compiler.csproj|solutionrelative:compiler\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F74E8EED-8C45-43D8-B7D5-EF49939929B8}|Compiler\\Compiler.csproj|c:\\users\\matth\\documents\\github\\personalrepos\\pc2\\compiler\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F74E8EED-8C45-43D8-B7D5-EF49939929B8}|Compiler\\Compiler.csproj|solutionrelative:compiler\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BIOS.cs",
+              "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PersonalRepos\\PC2\\PC2\\BIOS.cs",
+              "RelativeDocumentMoniker": "PC2\\BIOS.cs",
+              "ToolTip": "C:\\Users\\matth\\Documents\\GitHub\\PersonalRepos\\PC2\\PC2\\BIOS.cs",
+              "RelativeToolTip": "PC2\\BIOS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-16T05:51:45.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PersonalRepos\\PC2\\Compiler\\Form1.cs",
+              "RelativeDocumentMoniker": "Compiler\\Form1.cs",
+              "ToolTip": "C:\\Users\\matth\\Documents\\GitHub\\PersonalRepos\\PC2\\Compiler\\Form1.cs",
+              "RelativeToolTip": "Compiler\\Form1.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-16T05:51:04.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PersonalRepos\\PC2\\Compiler\\Program.cs",
+              "RelativeDocumentMoniker": "Compiler\\Program.cs",
+              "ToolTip": "C:\\Users\\matth\\Documents\\GitHub\\PersonalRepos\\PC2\\Compiler\\Program.cs",
+              "RelativeToolTip": "Compiler\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-16T05:51:00.451Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

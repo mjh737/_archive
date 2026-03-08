@@ -1,0 +1,59 @@
+Microsoft (R) Macro Assembler Version 9.00.30729.01	    09/15/09 19:10:30
+01 Print a Strin					     Page 1 - 1
+
+
+				TITLE		01 Print a String
+				SUBTITLE	Based on Duntemann p.229
+
+				.MODEL	TINY
+				.386
+				option segment:use16
+
+ 0000				.data
+ 0000 4D 61 74 74 20 69		message db "Matt is so cool!",13,10,"$"
+       73 20 73 6F 20 63
+       6F 6F 6C 21 0D 0A
+       24
+
+ 0000				.code
+				.startup
+ 0100  BA 0000 R			mov dx, OFFSET message
+ 0103  B4 09				mov ah, 9h
+ 0105  CD 21				int 21h
+
+ 0107  B8 4C00				mov ax, 04C00h
+ 010A  CD 21				int 21h
+
+				END
+Microsoft (R) Macro Assembler Version 9.00.30729.01	    09/15/09 19:10:30
+01 Print a Strin					     Symbols 2 - 1
+Based on Duntemann p.22
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+_DATA  . . . . . . . . . . . . .	16 Bit	 0013	  Word	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	16 Bit	 010C	  Word	  Public  'CODE'	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 0000h	 
+@DataSize  . . . . . . . . . . .	Number	 0000h	 
+@Interface . . . . . . . . . . .	Number	 0000h	 
+@Model . . . . . . . . . . . . .	Number	 0001h	 
+@Startup . . . . . . . . . . . .	L Near	 0100	  _TEXT	
+@code  . . . . . . . . . . . . .	Text   	 DGROUP
+@data  . . . . . . . . . . . . .	Text   	 DGROUP
+@fardata?  . . . . . . . . . . .	Text   	 FAR_BSS
+@fardata . . . . . . . . . . . .	Text   	 FAR_DATA
+@stack . . . . . . . . . . . . .	Text   	 DGROUP
+message  . . . . . . . . . . . .	Byte	 0000	  _DATA	
+
+	   0 Warnings
+	   0 Errors

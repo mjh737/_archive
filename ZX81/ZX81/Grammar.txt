@@ -1,0 +1,49 @@
+﻿<program> ::= { <line> }
+
+<line> ::= <line-number> <statement-list>
+
+<line-number> ::= <integer>
+
+<statement-list> ::= <statement> | <statement> ":" <statement-list>
+
+<statement> ::= <print-stmt>
+              | <input-stmt>
+              | <let-stmt>
+              | <if-stmt>
+              | <goto-stmt>
+              | <gosub-stmt>
+              | <return-stmt>
+              | <for-stmt>
+              | <next-stmt>
+              | <rem-stmt>
+              | <pause-stmt>
+              | <cls-stmt>
+
+<print-stmt> ::= "PRINT" <expression>
+<input-stmt> ::= "INPUT" <variable>
+<let-stmt>   ::= [ "LET" ] <variable> "=" <expression>
+<if-stmt>    ::= "IF" <expression> "THEN" <statement>
+<goto-stmt>  ::= "GOTO" <line-number>
+<gosub-stmt> ::= "GOSUB" <line-number>
+<return-stmt>::= "RETURN"
+<for-stmt>   ::= "FOR" <variable> "=" <expression> "TO" <expression> [ "STEP" <expression> ]
+<next-stmt>  ::= "NEXT" <variable>
+<rem-stmt>   ::= "REM" <text>
+<pause-stmt> ::= "PAUSE" <expression>
+<cls-stmt>   ::= "CLS"
+
+<expression> ::= <term> | <expression> "+" <term> | <expression> "-" <term>
+
+<term> ::= <factor> | <term> "*" <factor> | <term> "/" <factor>
+
+<factor> ::= <variable> | <number> | <string> | "(" <expression> ")" | "RND"
+
+<variable> ::= <letter> [ <letter> | <digit> ] [ "$" ]
+
+<number> ::= <digit> { <digit> } [ "." <digit> { <digit> } ]
+
+<string> ::= '"' { <character> } '"'
+
+<letter> ::= "A" | "B" | ... | "Z"
+<digit> ::= "0" | "1" | ... | "9"
+<text> ::= { <character> }

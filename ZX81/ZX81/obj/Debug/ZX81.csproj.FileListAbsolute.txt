@@ -1,0 +1,8 @@
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\ZX81\ZX81\bin\Debug\ZX81.exe
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\ZX81\ZX81\bin\Debug\ZX81.pdb
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\ZX81\ZX81\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\ZX81\ZX81\obj\Debug\ZX81.Form1.resources
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\ZX81\ZX81\obj\Debug\ZX81.Properties.Resources.resources
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\ZX81\ZX81\obj\Debug\ZX81.csproj.GenerateResource.Cache
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\ZX81\ZX81\obj\Debug\ZX81.exe
+C:\Users\lonelyoutpost\Desktop\Stuff\Private\Projects\ZX81\ZX81\obj\Debug\ZX81.pdb

@@ -1,0 +1,238 @@
+Microsoft (R) Macro Assembler Version 9.00.30729.01	    11/30/08 20:27:49
+01 Print a Strin					     Page 1 - 1
+
+
+				TITLE		01 Print a String
+				SUBTITLE	Based on Duntemann p.229
+
+				.MODEL	TINY
+				.286
+				ASSUME DS:DATA, CS:CODE, SS:STACK
+
+ 0000				stack SEGMENT 'STACK'
+ 0000				stack ENDS
+
+ 0000				data SEGMENT
+				                  ; Combined 0-based X,Y of 80 x 25 screen LR corner:
+ 0000 184F			LRXY      DW      184FH  ; 18H = 24D; 4FH = 79D
+
+ 0002 0000			TextPos   DW      0   ; Memory variable to store text screen coordinates
+
+ 0004 45 61 74 20 61 74		EatMsg1   DB      "Eat at Joe's...",'$'
+       20 4A 6F 65 27 73
+       2E 2E 2E 24
+ 0014 2E 2E 2E 74 65 6E		EatMsg2   DB      "...ten million flies can't ALL be wrong!",'$'
+       20 6D 69 6C 6C 69
+       6F 6E 20 66 6C 69
+       65 73 20 63 61 6E
+       27 74 20 41 4C 4C
+       20 62 65 20 77 72
+       6F 6E 67 21 24
+ 003D 0D 0A 24			CRLF      DB      0DH,0AH,'$'
+ 0040 20 24			Space     DB      " ",'$'
+
+ 0042				data ENDS
+
+ 0000				code SEGMENT
+				.startup
+ 0100  E8 0034			call ClrScr        ; Clear the full display
+
+				    ; Make sure you understand the difference between
+				    ;   MOV DX,Identifier and MOV DX,[Identifier] !!!
+
+ 0103  C7 06 0002 R 0914	    mov  [TextPos],0914H   ; 0914H = X @ 20, Y @ 9
+
+ 0109  8B 16 0002 R		    mov  DX,[TextPos]  ; TextPos contains X,Y position values
+ 010D  E8 0020			    call GotoXY        ; Position cursor
+ 0110  BA 0004 R		    mov  DX,OFFSET EatMsg1    ; Load offset of EatMsg1 string into DX
+ 0113  E8 0031			    call Write         ;   and display it
+
+ 0116  8B 16 0002 R		    mov  DX,[TextPos]  ; Re-use text position variable
+ 011A  B6 0A			    mov  DH,10         ; Put new Y value into DH but re-use X
+ 011C  E8 0011			    call GotoXY        ; Position cursor
+ 011F  BA 0014 R		    mov  DX,OFFSET EatMsg2    ; Load offset of EatMsg2 string into DX
+ 0122  E8 0022			    call Write         ;   and display it
+
+ 0125  BA 1701			    mov  DX,1701H      ; Move cursor to bottom left corner of screen
+ 0128  E8 0005			    call GotoXY        ;   so that 'Press enter...' msg is out of the way.
+
+ 012B  B8 4C00			    mov  ax,4C00H      ; This function exits the program
+ 012E  CD 21			    int  21H           ;   and returns control to DOS.
+
+				;----------------------------------------|
+				;           PROCEDURE SECTION            |
+				;----------------------------------------|
+
+				;---------------------------------------------------------------
+				;   GOTOXY    --  Positions the hardware cursor to X,Y
+				;   Last update 7/31/99
+				;
+				;   1 entry point:
+				;
+				;   GotoXY:
+				;      Caller must pass:
+				;      DL: X value     These are both 0-based; i.e., they
+				;      DH: Y value       assume a screen 24 by 79, not 25 by 80
+				;      Action:  Moves the hardware cursor to the X,Y position
+				;               loaded into DL and H.
+				;---------------------------------------------------------------
+ 0130				GotoXY:
+ 0130  B4 02			    mov AH,02H        ; Select VIDEO service 2: Position cursor
+ 0132  B7 00			    mov BH,0          ; Stay with display page 0
+ 0134  CD 10			    int 10H           ; Call VIDEO
+ 0136  C3			    ret               ; Return to the caller
+
+
+				;---------------------------------------------------------------
+				;   CLRSCR    --  Clears or scrolls screens or windows
+				;   Last update 3/5/89
+				;
+				;   4 entry points:
+				;
+				;   ClrScr:
+				;      No values expected from caller
+				;      Action:  Clears the entire screen to blanks with 07H as
+				;               the display attribute
+				;
+				;   ClrWin:
+				;      Caller must pass:
+				;      CH: Y coordinate, upper left corner of window
+				;      CL: X coordinate, upper left corner of window
+				;      DH: Y coordinate, lower right corner of window
+				;      DL: X coordinate, lower right corner of window
+				;      Action:  Clears the window specified by the caller to
+				;               blanks with 07H as the display attribute
+				;
+				;   ScrlWin:
+				;      Caller must pass:
+				;      CH: Y coordinate, upper left corner of window
+				;      CL: X coordinate, upper left corner of window
+				;      DH: Y coordinate, lower right corner of window
+				;      DL: X coordinate, lower right corner of window
+				;      AL: number of lines to scroll window by (0 clears it)
+				;      Action:  Scrolls the window specified by the caller by
+				;               the number of lines passed in AL.  The blank
+				;               lines inserted at screen bottom are cleared
+				;               to blanks with 07H as the display attribute
+				;
+				;   VIDEO6:
+				;      Caller must pass:
+				;      CH: Y coordinate, upper left corner of window
+				;      CL: X coordinate, upper left corner of window
+				;      DH: Y coordinate, lower right corner of window
+				;      DL: X coordinate, lower right corner of window
+				;      AL: number of lines to scroll window by (0 clears it)
+				;      BH: display attribute for blanked lines (07H is "normal")
+				;      Action:  Generic access to BIOS VIDEO service 6.  Caller
+				;               must pass ALL register parameters as shown above
+				;---------------------------------------------------------------
+
+ 0137				ClrScr:
+ 0137  B9 0000			    mov CX,0          ; Upper left corner of full screen
+ 013A  8B 16 0000 R		    mov DX,LRXY       ; Load lower-right XY coordinates into DX
+ 013E				ClrWin:
+ 013E  B0 00			    mov AL,0          ; 0 specifies clear entire region
+ 0140				ScrlWin:
+ 0140  B7 07			    mov BH,07H        ; Specify "normal" attribute for blanked line(s)
+ 0142				VIDEO6:
+ 0142  B4 06			    mov AH,06H        ; Select VIDEO service 6: Initialize/Scroll
+ 0144  CD 10			    int 10H           ; Call VIDEO
+ 0146  C3			    ret               ; Return to the caller
+
+
+				;---------------------------------------------------------------
+				;   WRITE    --  Displays information to the screen via DOS
+				;                service 9: Print String
+				;   Last update 7/31/99
+				;
+				;   1 entry point:
+				;
+				;   Write:
+				;      Caller must pass:
+				;      DS: The segment of the string to be displayed
+				;      DX: The offset of the string to be displayed
+				;          String must be terminated by "$"
+				;      Action:  Displays the string at DS:DX up to the "$" marker
+				;---------------------------------------------------------------
+
+ 0147				Write:
+ 0147  B4 09			    mov AH,09H        ; Select DOS service 9: Print String
+ 0149  CD 21			    int 21H           ; Call DOS
+ 014B  C3			    ret               ; Return to the caller
+
+
+				;---------------------------------------------------------------
+				;   WRITELN  --  Displays information to the screen via DOS
+				;                service 9 and issues a newline
+				;   Last update 7/31/99
+				;
+				;   1 entry point:
+				;
+				;   Writeln:
+				;      Caller must pass:
+				;      DS: The segment of the string to be displayed
+				;      DX: The offset of the string to be displayed
+				;          String must be terminated by "$"
+				;      Action:  Displays the string at DS:DX up to the "$" marker
+				;               marker, then issues a newline.  Hardware cursor
+				;               will move to the left margin of the following
+				;               line.  If the display is to the bottom screen
+				;               line, the screen will scroll.
+				;      Calls: Write
+				;---------------------------------------------------------------
+
+ 014C				Writeln:
+ 014C  E8 FFF8			    call Write        ; Display the string proper through Write
+ 014F  BA 003D R		    mov DX,OFFSET CRLF       ; Load offset of newline string to DX
+ 0152  E8 FFF2			    call Write        ; Display the newline string through Write
+ 0155  C3			    ret               ; Return to the caller
+
+				END
+Microsoft (R) Macro Assembler Version 9.00.30729.01	    11/30/08 20:27:49
+01 Print a Strin					     Symbols 2 - 1
+Based on Duntemann p.22
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+DGROUP . . . . . . . . . . . . .	GROUP
+_TEXT  . . . . . . . . . . . . .	16 Bit	 0000	  Word	  Public  'CODE'	
+_DATA  . . . . . . . . . . . . .	16 Bit	 0000	  Word	  Public  'DATA'	
+code . . . . . . . . . . . . . .	16 Bit	 0156	  	  Private 
+data . . . . . . . . . . . . . .	16 Bit	 0042	  	  Private 
+stack  . . . . . . . . . . . . .	16 Bit	 0000	  	  Private 'STACK'	 
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 0000h	 
+@DataSize  . . . . . . . . . . .	Number	 0000h	 
+@Interface . . . . . . . . . . .	Number	 0000h	 
+@Model . . . . . . . . . . . . .	Number	 0001h	 
+@Startup . . . . . . . . . . . .	L Near	 0100	  code	
+@code  . . . . . . . . . . . . .	Text   	 DGROUP
+@data  . . . . . . . . . . . . .	Text   	 DGROUP
+@fardata?  . . . . . . . . . . .	Text   	 FAR_BSS
+@fardata . . . . . . . . . . . .	Text   	 FAR_DATA
+@stack . . . . . . . . . . . . .	Text   	 DGROUP
+CRLF . . . . . . . . . . . . . .	Byte	 003D	  data	
+ClrScr . . . . . . . . . . . . .	L Near	 0137	  code	
+ClrWin . . . . . . . . . . . . .	L Near	 013E	  code	
+EatMsg1  . . . . . . . . . . . .	Byte	 0004	  data	
+EatMsg2  . . . . . . . . . . . .	Byte	 0014	  data	
+GotoXY . . . . . . . . . . . . .	L Near	 0130	  code	
+LRXY . . . . . . . . . . . . . .	Word	 0000	  data	
+ScrlWin  . . . . . . . . . . . .	L Near	 0140	  code	
+Space  . . . . . . . . . . . . .	Byte	 0040	  data	
+TextPos  . . . . . . . . . . . .	Word	 0002	  data	
+VIDEO6 . . . . . . . . . . . . .	L Near	 0142	  code	
+Writeln  . . . . . . . . . . . .	L Near	 014C	  code	
+Write  . . . . . . . . . . . . .	L Near	 0147	  code	
+
+	   0 Warnings
+	   0 Errors

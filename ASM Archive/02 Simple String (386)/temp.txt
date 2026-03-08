@@ -1,0 +1,38 @@
+.MODEL	TINY
+.286
+
+.code
+
+.startup
+
+	jmp	ToStart	  ; Jump over data we placed in .code section.
+
+Message:
+
+	db	13, 10, 13, 10
+	db	"   This .COM program runs under MS-DOS or MS-Windows."
+	db	13, 10, 24h		;  $-sign-terminated string
+
+ToStart:
+
+	mov	dx, OFFSET Message	; Offset of our Message
+	mov	ah, 9			; Function 9 of INT 21
+	int	21h			; Display $-String
+
+	mov	dx, OFFSET WinMsg
+	mov	ah, 9
+	int	21h
+
+	mov	ah, 0		; Function 0 of INT 16
+	int	16h		; Wait for a keypress
+
+	mov	ax, 4c01h	; Function 4C01 of INT 21
+	int	21h		; Normal Program Termination
+
+.data
+
+WinMsg	db	13, 10, 13, 10
+	db	"   Press any key to exit program . . ."
+	db	13, 10, 24h	;  $-sign-terminated string
+
+END
